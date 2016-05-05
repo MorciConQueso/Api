@@ -3,7 +3,9 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var md5 = require('md5');
-var ninos = require('./model/ninos.js');
+var ninos = require('./controller/ninos.js');
+var calif = require('./controller/calificaciones.js');
+var users = require('./controller/usuarios.js');
 var bd = require('./bd.js');
 
 var app = express();
@@ -13,6 +15,14 @@ app.use(bodyParser.json());
 app.use(methodOverride());
 
 var router = express.Router();
+
+router.post('/users/login', function (req, res) {
+    var body = req.body;
+    users.login(body, function(json, code) {
+        res.json(json);
+        res.statusCode = code;
+    });
+});
 
 router.get('/nino/:idNino', function (req, res) {
     var idNino = req.param('idNino');
@@ -30,8 +40,18 @@ router.get('/nino/:idNino/cursos', function (req, res) {
     });
 });
 
-app.use(router);
+//Calificaciones
+router.get('/calificaciones/:idNino/:idCurso/:fecha', function (req, res) {
+    var idNino = req.param('idNino');
+    var idCurso = req.param('idCurso');
+    var fecha = req.param('fecha');
+    calif.getCalificaciones(idNino,idCurso,fecha, function (json, code) {
+        res.json(json);
+        res.statusCode = code;
+    });
+});
 
+app.use(router);
 
 app.listen(3000, function () {
     console.log("Server running on port 3000");

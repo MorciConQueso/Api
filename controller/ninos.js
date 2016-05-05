@@ -2,8 +2,9 @@
  * Created by Usuario on 05/05/2016.
  */
 var bd = require('../bd.js');
+
 function getNino(idNino, callback) {
-    var sql = "SELECT * FROM ninos WHERE id = " + idNino;
+    var sql = "SELECT n.* FROM ninos n WHERE n.id = " + idNino;
     bd.query(sql, function (err, rows, fields) {
         var json = {};
         var statusCode = 400;
