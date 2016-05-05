@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "node": "^0.0.0",
-    "express": "^4.13.0",
-    "mysql": "^2.10.0",
+    "MD5": "^1.2.0",
     "body-parser": "^1.0.0",
-    "MD5": "^1.2.0"
+    "express": "^4.13.4",
+    "mysql": "^2.10.0",
+    "node": "^0.0.0"
   },
   "devDependencies": {},
   "scripts": {
