@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "driver": "mysql",
+    "user": "root",
+    "database": "academykids",
+    "password": ""
+  },
+
+  "production": {
+    "driver": "mysql",
+    "user": "root",
+    "database": "academykids",
+    "password": ""
+  }
+}

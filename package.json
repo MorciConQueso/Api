@@ -1,0 +1,19 @@
+{
+  "name": "academykidsapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "node": "^0.0.0",
+    "express": "^4.13.0",
+    "mysql": "^2.10.0",
+    "body-parser": "^1.0.0",
+    "MD5": "^1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
