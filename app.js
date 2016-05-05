@@ -5,6 +5,7 @@ var methodOverride = require('method-override');
 var md5 = require('md5');
 var ninos = require('./controller/ninos.js');
 var users = require('./controller/usuarios.js');
+var ejercicios = require('./controller/ejercicios.js');
 var bd = require('./bd.js');
 
 var app = express();
@@ -17,7 +18,7 @@ var router = express.Router();
 
 router.post('/users/login', function (req, res) {
     var body = req.body;
-    users.login(body, function(json, code) {
+    users.login(body, function (json, code) {
         res.json(json);
         res.statusCode = code;
     });
@@ -37,6 +38,15 @@ router.get('/nino/:idNino/cursos', function (req, res) {
         res.json(json);
         res.statusCode = code;
     });
+});
+
+router.get('/curso/:idCurso/ejercicios/:date', function (req, res) {
+    var idCurso = req.param('idCurso');
+    var date = req.param('date');
+    ejercicios.getEjerciciosCurso(idCurso, date, function (json, code) {
+        res.json(json);
+        res.statusCode = code;
+    })
 });
 
 app.use(router);
