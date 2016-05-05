@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var md5 = require('md5');
 var ninos = require('./controller/ninos.js');
+var calif = require('./controller/calificaciones.js');
 var users = require('./controller/usuarios.js');
 var ejercicios = require('./controller/ejercicios.js');
 var bd = require('./bd.js');
@@ -47,6 +48,17 @@ router.get('/curso/:idCurso/ejercicios/:date', function (req, res) {
         res.json(json);
         res.statusCode = code;
     })
+});
+
+//Calificaciones
+router.get('/calificaciones/:idNino/:idCurso/:fecha', function (req, res) {
+    var idNino = req.param('idNino');
+    var idCurso = req.param('idCurso');
+    var fecha = req.param('fecha');
+    calif.getCalificaciones(idNino,idCurso,fecha, function (json, code) {
+        res.json(json);
+        res.statusCode = code;
+    });
 });
 
 app.use(router);
