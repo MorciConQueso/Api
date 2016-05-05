@@ -21,6 +21,31 @@ function getEjerciciosCurso(idCurso, date, callback) {
     })
 }
 
+function createEjercicioCurso(body, callback) {
+    var sql = "INSERT INTO ejercicios(descripcion, url, Cursos_id, fecha) VALUES( "
+        + "'" + body.desc + "' , "
+        + "'" + body.url + "' , "
+        + body.idCurso + " , "
+        + "now())";
+    bd.query(sql, function (err, rows, fields) {
+        var json = {};
+        var statusCode = 400;
+        if (err) {
+            json.res = 0;
+            json.result = err;
+        }
+        else {
+            json.res = 1;
+            json.result = {
+                affectedRows: rows.affectedRows,
+                insertId: rows.insertId,
+                message: rows.message,
+            };
+        }
+        callback(json, statusCode);
+    })
+}
+
 function toObject(rows) {
     var result = [];
     for (var i = 0; i < rows.length; i++) {
@@ -48,3 +73,4 @@ function dateToString(date) {
 }
 
 module.exports.getEjerciciosCurso = getEjerciciosCurso;
+module.exports.createEjercicioCurso = createEjercicioCurso;

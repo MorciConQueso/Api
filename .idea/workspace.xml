@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="344270ec-216f-4bcc-a058-65c16dcd7c68" name="Default" comment="getEjerciciosCurso">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="" />
+    <list default="true" id="344270ec-216f-4bcc-a058-65c16dcd7c68" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bd.js" afterPath="$PROJECT_DIR$/bd.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/ejercicios.js" afterPath="$PROJECT_DIR$/controller/ejercicios.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/ninos.js" afterPath="$PROJECT_DIR$/controller/ninos.js" />
     </list>
     <ignored path="AcademyKidsApi.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,8 +32,20 @@
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="38" column="23" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
+              <caret line="60" column="14" selection-start-line="60" selection-start-column="14" selection-end-line="60" selection-end-column="14" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bd.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bd.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+              <folding>
+                <element signature="e#0#44#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -39,7 +54,7 @@
         <entry file="file://$PROJECT_DIR$/controller/ninos.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+              <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
               <folding>
                 <element signature="e#0#44#0" expanded="false" />
               </folding>
@@ -54,7 +69,6 @@
               <caret line="3" column="29" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding>
                 <element signature="e#0#44#0" expanded="false" />
-                <element signature="n#!!block;n#login#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -63,8 +77,8 @@
       <file leaf-file-name="ejercicios.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controller/ejercicios.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48604652">
-              <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.872093">
+              <caret line="41" column="38" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
               <folding>
                 <element signature="e#0#44#0" expanded="false" />
                 <element signature="n#!!block;n#dateToString#0" expanded="false" />
@@ -93,12 +107,12 @@
         <option value="$PROJECT_DIR$/model/nino.js" />
         <option value="$PROJECT_DIR$/routes.js" />
         <option value="$PROJECT_DIR$/model/cursos.js" />
-        <option value="$PROJECT_DIR$/bd.js" />
         <option value="$PROJECT_DIR$/model/ninos.js" />
         <option value="$PROJECT_DIR$/model/usuarios.js" />
-        <option value="$PROJECT_DIR$/controller/ninos.js" />
         <option value="$PROJECT_DIR$/controller/usuarios.js" />
+        <option value="$PROJECT_DIR$/controller/ninos.js" />
         <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/bd.js" />
         <option value="$PROJECT_DIR$/controller/ejercicios.js" />
       </list>
     </option>
@@ -114,7 +128,7 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
-    <option name="width" value="1182" />
+    <option name="width" value="1331" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -181,7 +195,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="C:/xampp/htdocs/ApiGreenpoint" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../botTwitter" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="ignore_missing_gitignore" value="true" />
@@ -202,10 +216,10 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/AcademyKidsApi.iml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/express/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/package.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bd.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/md5/README.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/md5/md5.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/md5/package.json</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -213,9 +227,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/jsLibraryMappings.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/libraries/api_academykids_node_modules.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/controller/calificaciones.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/controller/cursos.js</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -223,6 +235,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="true" />
           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/libraries/api_academykids_node_modules.xml</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Restored" />
@@ -363,21 +376,27 @@
       <option name="project" value="LOCAL" />
       <updated>1462459650176</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="getEjerciciosCurso">
+      <created>1462460025231</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1462460025231</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1182" height="1047" extended-state="0" />
+    <frame x="-7" y="0" width="1331" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18884893" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38938054" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="1.0" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6629712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -436,7 +455,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
-            <element signature="n#!!block;n#login#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -466,53 +484,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26537997">
-          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bd.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.78571427">
-          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/ninos.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#44#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controller/usuarios.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="29" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
-            <element signature="n#!!block;n#login#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26252982">
+          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="23" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
+          <caret line="60" column="14" selection-start-line="60" selection-start-column="14" selection-end-line="60" selection-end-column="14" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bd.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/ninos.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/ejercicios.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48604652">
-          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.872093">
+          <caret line="41" column="38" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
             <element signature="n#!!block;n#dateToString#0" expanded="false" />

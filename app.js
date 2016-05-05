@@ -25,6 +25,14 @@ router.post('/users/login', function (req, res) {
     });
 });
 
+router.post('/nino/activate', function (req, res) {
+    var body = req.body;
+    ninos.activateNino(body, function (json, code) {
+        res.json(json);
+        res.statusCode = code;
+    })
+});
+
 router.get('/nino/:idNino', function (req, res) {
     var idNino = req.param('idNino');
     ninos.getNino(idNino, function (json, code) {
@@ -50,12 +58,20 @@ router.get('/curso/:idCurso/ejercicios/:date', function (req, res) {
     })
 });
 
+router.post('/curso/ejercicio', function(req, res) {
+    var body= req.body;
+    ejercicios.createEjercicioCurso(body, function(json, code) {
+        res.json(json);
+        res.statusCode = code;
+    })
+});
+
 //Calificaciones
 router.get('/calificaciones/:idNino/:idCurso/:fecha', function (req, res) {
     var idNino = req.param('idNino');
     var idCurso = req.param('idCurso');
     var fecha = req.param('fecha');
-    calif.getCalificaciones(idNino,idCurso,fecha, function (json, code) {
+    calif.getCalificaciones(idNino, idCurso, fecha, function (json, code) {
         res.json(json);
         res.statusCode = code;
     });
