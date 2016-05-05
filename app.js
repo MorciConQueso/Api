@@ -6,6 +6,7 @@ var md5 = require('md5');
 var ninos = require('./controller/ninos.js');
 var calif = require('./controller/calificaciones.js');
 var users = require('./controller/usuarios.js');
+var cursos = require('./controller/cursos.js');
 var bd = require('./bd.js');
 
 var app = express();
@@ -46,6 +47,15 @@ router.get('/calificaciones/:idNino/:idCurso/:fecha', function (req, res) {
     var idCurso = req.param('idCurso');
     var fecha = req.param('fecha');
     calif.getCalificaciones(idNino,idCurso,fecha, function (json, code) {
+        res.json(json);
+        res.statusCode = code;
+    });
+});
+
+//Cursos
+router.get('/cursos/:idCurso', function (req, res) {
+    var idCurso = req.param('idCurso');
+    cursos.getCourses(idCurso, function (json, code) {
         res.json(json);
         res.statusCode = code;
     });
