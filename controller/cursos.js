@@ -20,7 +20,31 @@ function getCourses(idCurso, callback) {
         callback(json, statusCode);
     });
 }
-
-module.exports.getCoursesByUser = getCoursesByUser;
+/*
+function createCurso(body, callback) {
+    var sql = "INSERT INTO cursos(nombre, Usuarios_id) VALUES( "
+        + "'" + body.nombre + "' , "
+        + body.idUs + " , "
+        + "now())";
+    bd.query(sql, function (err, rows, fields) {
+        var json = {};
+        var statusCode = 400;
+        if (err) {
+            json.res = 0;
+            json.result = err;
+        }
+        else {
+            json.res = 1;
+            json.result = {
+                affectedRows: rows.affectedRows,
+                insertId: rows.insertId,
+                message: rows.message,
+            };
+        }
+        callback(json, statusCode);
+    })
+}
+*/
+module.exports.getCourses = getCourses;
 
 
