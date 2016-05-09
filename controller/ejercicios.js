@@ -4,7 +4,7 @@
 var bd = require('../bd.js');
 
 function getEjerciciosCurso(idCurso, date, callback) {
-    var sql = "select * from ejercicios where fecha = '" + date + "' and cursos_id = " + idCurso;
+    var sql = "select * from ejercicios where fecha = '" + date + "' and idCurso = " + idCurso;
     bd.query(sql, function (err, rows, fields) {
         var json = {};
         var statuscode = 400;

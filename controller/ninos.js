@@ -25,42 +25,25 @@ function activateNino(body, callback) {
     })
 }
 
-function getNino(idNino, callback) {
-    var sql = "SELECT n.* FROM ninos n WHERE n.id = " + idNino;
+function getNinosUser(idUser, callback) {
+    var sql = "select id, nombre, apellidos, privacidad, activado " +
+        "from ninos " +
+        "where idUsuario = " + idUser;
     bd.query(sql, function (err, rows, fields) {
         var json = {};
         var statusCode = 400;
         if (err) {
             json.res = 0;
-            json.result = err
+            json.result = err;
         }
         else {
-            statusCode = 200;
             json.res = 1;
-            json.nino = rows[0];
+            json.ninos = rows;
+            statusCode = 200;
         }
         callback(json, statusCode);
     });
 }
 
-function getCoursesByNino(idNino, callback) {
-    var sql = "SELECT c.* FROM cursos c INNER JOIN ninos_has_cursos nc ON c.id = nc.cursos_id where nc.ninos_id = " + idNino;
-    bd.query(sql, function (err, rows, fields) {
-        var json = {};
-        var statusCode = 400;
-        if (err) {
-            json.res = 0;
-            json.result = err
-        }
-        else {
-            statusCode = 200;
-            json.res = 1;
-            json.cursos = rows;
-        }
-        callback(json, statusCode);
-    });
-}
-
-module.exports.getCoursesByNino = getCoursesByNino;
-module.exports.getNino = getNino;
 module.exports.activateNino = activateNino;
+module.exports.getNinosUser = getNinosUser;

@@ -2,6 +2,7 @@
  * Created by Usuario on 05/05/2016.
  */
 var bd = require('../bd.js');
+var crypto = require('crypto');
 
 function login(body, callback) {
     var sql = "select * from usuarios where nickname = '" + body.nickname + "'";
@@ -33,10 +34,88 @@ function login(body, callback) {
     })
 }
 
+function register(body, callback) {
+    generateApiKey(function (apikey) {
+        var sql = "INSERT INTO usuarios(nickname, password, tipo, nombre, apellidos, apiKey) VALUES (" +
+            "'" + body.nickname + "', " +
+            "'" + cryptPass(body.password) + "', " +
+            "'" + body.tipo + "', " +
+            "'" + body.nombre + "', " +
+            "'" + body.apellidos + "', " +
+            "'" + apikey + "'" +
+            " )";
+        bd.query(sql, function (err, rows, fields) {
+            var json = {};
+            var statuscode = 400;
+            if (err) {
+                json.res = 0;
+                json.result = err;
+            }
+            else {
+                statuscode = 200;
+                json.res = 1;
+                json.result = {
+                    affectedRows: rows.affectedRows,
+                    insertId: rows.insertId,
+                    message: rows.message
+                };
+            }
+            callback(json, statuscode);
+        })
+    });
+}
+
+function autenticate(head, callback) {
+    var apiKey = head.authorization;
+    var sql = "SELECT * from usuarios where apikey = '" + apiKey + "'";
+    bd.query(sql, function (err, rows, fields) {
+        if (err) callback(false, err);
+        else {
+            if (rows.length > 0) {
+                if (rows[0].apiKey === apiKey) callback(true, rows[0]);
+                else callback(false, "Invalid Key");
+            }
+            else
+                callback(false, "Invalid User");
+
+        }
+    });
+}
+
+function generateApiKey(callback) {
+    var hash = crypto.createHash('sha256');
+    hash.on('readable', function () {
+        var data = hash.read();
+        if (data) callback(data.toString('hex'));
+    });
+    hash.write(new Date().getTime() + "");
+    hash.end();
+}
+
+function cryptPass(pass) {
+    var algoritm = 'aes-256-ctr';
+    var key = 'd6F3Efeq';
+    var cipher = crypto.createCipher(algoritm, key);
+    var crypted = cipher.update(pass, 'utf8', 'hex');
+    crypted += cipher.final('hex');
+    return crypted;
+}
+
+function decrypPass(pass) {
+    var algoritm = 'aes-256-ctr';
+    var key = 'd6F3Efeq';
+    var decipher = crypto.createDecipher(algoritm, key);
+    var dec = decipher.update(pass, 'hex', 'utf8');
+    dec += decipher.final('utf8');
+    return dec;
+}
+
 function checkPassword(body, user) {
     var pass = body.password;
-    var pass2 = user.password;
+    var pass2 = decrypPass(user.password);
     return pass === pass2;
 }
 
 module.exports.login = login;
+module.exports.register = register;
+module.exports.autenticate = autenticate;

@@ -8,7 +8,6 @@ var courses = require('./controller/cursos.js');
 var calif = require('./controller/calificaciones.js');
 var users = require('./controller/usuarios.js');
 var ejercicios = require('./controller/ejercicios.js');
-var cursos = require('./controller/cursos.js');
 var bd = require('./bd.js');
 
 var app = express();
@@ -19,6 +18,8 @@ app.use(methodOverride());
 app.use(cors());
 
 var router = express.Router();
+
+var userTypes = ['admin', 'profesor', 'padre'];
 
 //USUARIO
 router.post('/users/login', function (req, res) {
@@ -55,7 +56,6 @@ router.get('/users/ninos', function (req, res) {
     })
 });
 
-//NIÑOS
 router.get('/nino/:idNino/cursos', function (req, res) {
     var params = req.params;
     var head = req.headers;
@@ -84,16 +84,6 @@ router.get('/nino/:idNino/cursos', function (req, res) {
 //    })
 //});
 
-router.get('/nino/:idNino', function (req, res) {
-    var params = req.params;
-    var idNino = params.idNino;
-    ninos.getNino(idNino, function (json, code) {
-        res.json(json);
-        res.statusCode = code;
-    });
-});
-
-//CURSOS
 router.get('/curso/:idCurso/ejercicios/:date', function (req, res) {
     var params = req.params;
     var head = req.headers;
@@ -117,35 +107,73 @@ router.get('/curso/:idCurso/ejercicios/:date', function (req, res) {
 
 router.post('/curso/ejercicio', function (req, res) {
     var body = req.body;
-    ejercicios.createEjercicioCurso(body, function (json, code) {
-        res.json(json);
-        res.statusCode = code;
-    })
+    var head = req.headers;
+    users.autenticate(head, function (isOk, data) {
+        if (isOk)
+            if (data.tipo === userTypes[0] || data.tipo === userTypes[1])
+                ejercicios.createEjercicioCurso(body, function (json, code) {
+                    res.json(json);
+                    res.statusCode = code;
+                });
+            else {
+                var jsonA = {
+                    res: 3,
+                    result: "Permission Denied"
+                };
+                res.json(jsonA);
+                res.statusCode = 400;
+            }
+        else {
+            var json = {
+                res: 2,
+                result: data
+            };
+            res.json(json);
+            res.statusCode = 400;
+        }
+    });
+
 });
 
 //CALIFICACIONES
-router.get('/calificaciones/:idNino/:idCurso/:fecha', function (req, res) {
-    var idNino = req.param('idNino');
-    var idCurso = req.param('idCurso');
-    var fecha = req.param('fecha');
-    calif.getCalificaciones(idNino, idCurso, fecha, function (json, code) {
-        res.json(json);
-        res.statusCode = code;
+router.get('/curso/:idCurso/notas/:fecha/nino/:idNino', function (req, res) {
+    var params = req.params;
+    var head = req.headers;
+    var body = {
+        idNino: params.idNino,
+        idCurso: params.idCurso,
+        fecha: params.fecha
+    };
+    users.autenticate(head, function (isOk, data) {
+        if (isOk) {
+            var array = body.fecha.split("-");
+            if (array.length > 1)
+                calif.getCalificacionesDia(body, function (json, code) {
+                    res.json(json);
+                    res.statusCode = code;
+                });
+            else
+                calif.getCalificacionesMes(body, function (json, code) {
+                    res.json(json);
+                    res.statusCode = code;
+                });
+        }
+        else {
+            var json = {
+                res: 2,
+                result: data
+            };
+            res.json(json);
+            res.statusCode = 400;
+        }
     });
-});
-//Cursos
-router.get('/cursos/:idCurso', function (req, res) {
-    var idCurso = req.param('idCurso');
-    cursos.getCourses(idCurso, function (json, code) {
-        res.json(json);
-        res.statusCode = code;
-    })
+
 });
 
 router.post('/calificaciones/:idNino', function (req, res) {
     var body = req.body;
     var nino = req.param('idNino');
-    calif.setCalificaciones(body,nino, function (json, code) {
+    calif.setCalificaciones(body, nino, function (json, code) {
         res.json(json);
         res.statusCode = code;
     });

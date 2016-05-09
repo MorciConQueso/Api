@@ -25,23 +25,6 @@ function getCoursesNino(idNino, callback) {
     })
 }
 
-function getCourses(idCurso, callback) {
-    var sql = "SELECT * FROM cursos where id = " + idCurso;
-    bd.query(sql, function (err, rows, fields) {
-        var json = {};
-        var statusCode = 400;
-        if (err) {
-            json.res = 0;
-            json.result = err
-        }
-        else {
-            statusCode = 200;
-            json.res = 1;
-            json.cursos = rows;
-        }
-        callback(json, statusCode);
-    });
-}
 /*
 function createCurso(body, callback) {
     var sql = "INSERT INTO cursos(nombre, Usuarios_id) VALUES( "
@@ -67,8 +50,7 @@ function createCurso(body, callback) {
     })
 }
 */
-module.exports.getCourses = getCourses;
-module.exports.getCourses = getCourses;
+
 module.exports.getCoursesNino = getCoursesNino;
 
 
