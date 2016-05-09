@@ -10,8 +10,7 @@ var monthNames = ["January", "February", "March", "April", "May", "June",
 function getCalificacionesDia(body, callback) {
     var sql = "select c.id, c.comportamiento ,c.puntualidad ,c.ejercicios ,c.ayudaCompanieros from calificaciones c " +
         "inner join calificaciones_has_ninos cn on c.id = cn.idCalificacion " +
-        "inner join ninos n on n.id = cn.idNino " +
-        "where cn.fecha = '" + body.fecha + "' and c.idCurso = " + body.idCurso + " and n.id = " + body.idNino + ";";
+        "where cn.fecha = '" + body.fecha + "' and c.idCurso = " + body.idCurso + " and cn.idNino = " + body.idNino + ";";
     bd.query(sql, function (err, rows, fields) {
         var json = {};
         var statusCode = 400;
@@ -30,8 +29,7 @@ function getCalificacionesDia(body, callback) {
 function getCalificacionesMes(body, callback) {
     var sql = "select c.id, c.comportamiento, c.puntualidad, c.ejercicios, c.ayudaCompanieros from calificaciones c " +
         "inner join calificaciones_has_ninos cn on c.id = cn.idCalificacion " +
-        "inner join ninos n on n.id = cn.idNino " +
-        "where month(cn.fecha) = month('" + body.fecha + "') and c.idCurso = " + body.idCurso + " and n.id = " + body.idNino + ";";
+        "where month(cn.fecha) = month('" + body.fecha + "') and c.idCurso = " + body.idCurso + " and cn.idNino = " + body.idNino + ";";
     bd.query(sql, function(err, rows, fields) {
         var json = {};
         var statusCode = 400;
@@ -49,27 +47,10 @@ function getCalificacionesMes(body, callback) {
     });
 }
 
-function setCalificaciones(body, idNino, callback) {
-    //FUNCION SIN TERMINAR!!!
-    console.log(body.comportamiento);
-    var sql = "INSERT INTO calificaciones (comportamiento,puntualidad,ejercicios,ayudaCompanieros) " +
-        "VALUES (" + body.comportamiento + ", " + body.puntualidad + "," + body.puntEjercicios + "," + body.ayudaCompanieros + "); ";
-    bd.query(sql, function (err, rows, fileds) {
-        var json = {};
-        var statusCode = 400;
-        if (err) {
-            json.res = 0;
-            json.result = err
-        }
-        else {
-            statusCode = 200;
-            json.res = 1;
-            json.result = "Calificaciones insertadas";
-        }
-        callback(json, statusCode);
-    })
+function setCalificacionesEjercicios(body, params, callback) {
+    var sql = "insert into "
 }
 
 module.exports.getCalificacionesDia = getCalificacionesDia;
 module.exports.getCalificacionesMes = getCalificacionesMes;
-module.exports.setCalificaciones = setCalificaciones;
+module.exports.setCalificacionesEjercicios = setCalificacionesEjercicios;

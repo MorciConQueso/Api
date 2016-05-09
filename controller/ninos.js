@@ -3,8 +3,8 @@
  */
 var bd = require('../bd.js');
 
-function activateNino(body, callback) {
-    var sql = "UPDATE ninos set activado = true where id = " + body.idNino + " and usuarios_id = " + body.idUsuario;
+function activateNino(body, idUser, callback) {
+    var sql = "UPDATE ninos set activado = true where id = " + body.idNino + " and idUsuario = " + idUser;
     bd.query(sql, function (err, rows, fields) {
         var json = {};
         var statusCode = 400;
@@ -45,5 +45,29 @@ function getNinosUser(idUser, callback) {
     });
 }
 
+function setNinoUser(body, callback) {
+    var sql = "insert into ninos(nombre, apellidos, idUsuario) " +
+        "values ('" + body.nombre + "', '" + body.apellidos + "', " + body.idPadre + ")";
+    bd.query(sql, function (err, rows, fields) {
+        var json = {};
+        var statusCode = 400;
+        if (err) {
+            json.res = 0;
+            json.result = err;
+        }
+        else {
+            json.res = 1;
+            json.result = {
+                affectedRows: rows.affectedRows,
+                insertId: rows.insertId,
+                message: rows.message
+            };
+            statusCode = 200;
+        }
+        callback(json, statusCode);
+    })
+}
+
 module.exports.activateNino = activateNino;
 module.exports.getNinosUser = getNinosUser;
+module.exports.setNinoUser = setNinoUser;

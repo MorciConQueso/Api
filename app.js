@@ -22,7 +22,7 @@ var router = express.Router();
 var userTypes = ['admin', 'profesor', 'padre'];
 
 //USUARIO
-router.post('/users/login', function (req, res) {
+router.post('/user/login', function (req, res) {
     var body = req.body;
     users.login(body, function (json, code) {
         res.json(json);
@@ -30,7 +30,7 @@ router.post('/users/login', function (req, res) {
     });
 });
 
-router.post('/users/register', function (req, res) {
+router.post('/user/register', function (req, res) {
     var body = req.body;
     users.register(body, function (json, code) {
         res.json(json);
@@ -38,7 +38,7 @@ router.post('/users/register', function (req, res) {
     })
 });
 
-router.get('/users/ninos', function (req, res) {
+router.get('/user/ninos', function (req, res) {
     var head = req.headers;
     users.autenticate(head, function (isOk, data) {
         if (isOk) ninos.getNinosUser(data.id, function (json, code) {
@@ -54,6 +54,64 @@ router.get('/users/ninos', function (req, res) {
             res.statusCode = 400;
         }
     })
+});
+
+router.post('/user/ninos', function (req, res) {
+    var body = req.body;
+    var head = req.headers;
+    users.autenticate(head, function (isOk, data) {
+        if (isOk)
+            if (data.tipo === userTypes[0])
+                ninos.setNinoUser(body, function (json, code) {
+                    res.json(json);
+                    res.statusCode = code;
+                });
+            else {
+                var jsonA = {
+                    res: 3,
+                    result: "Permission Denied"
+                };
+                res.json(jsonA);
+                res.statusCode = 400;
+            }
+        else {
+            var json = {
+                res: 2,
+                result: data
+            };
+            res.json(json);
+            res.statusCode = 400;
+        }
+    })
+});
+
+router.post('/cursos', function (req, res) {
+    var body = req.body;
+    var head = req.headers;
+    users.autenticate(head, function (isOk, data) {
+        if (isOk)
+            if (data.tipo === userTypes[0])
+                courses.setCourse(body, function (json, code) {
+                    res.json(json);
+                    res.statusCode = code;
+                });
+            else {
+                var jsonA = {
+                    res: 3,
+                    result: "Permission Denied"
+                };
+                res.json(jsonA);
+                res.statusCode = 400;
+            }
+        else {
+            var json = {
+                res: 2,
+                result: data
+            };
+            res.json(json);
+            res.statusCode = 400;
+        }
+    });
 });
 
 router.get('/nino/:idNino/cursos', function (req, res) {
@@ -76,13 +134,55 @@ router.get('/nino/:idNino/cursos', function (req, res) {
     })
 });
 
-//router.post('/nino/activate', function (req, res) {
-//    var body = req.body;
-//    ninos.activateNino(body, function (json, code) {
-//        res.json(json);
-//        res.statusCode = code;
-//    })
-//});
+router.post('/nino/cursos', function (req, res) {
+    var body = req.body;
+    var head = req.headers;
+    users.autenticate(head, function (isOk, data) {
+        if (isOk)
+            if (data.tipo === userTypes[0] || data.tipo === userTypes[1])
+                courses.setNinoCurso(body, function (json, code) {
+                    res.json(json);
+                    res.statusCode = code;
+                });
+            else {
+                var jsonA = {
+                    res: 3,
+                    result: "Permission Denied"
+                };
+                res.json(jsonA);
+                res.statusCode = 400;
+            }
+        else {
+            var json = {
+                res: 2,
+                result: data
+            };
+            res.json(json);
+            res.statusCode = 400;
+        }
+    });
+});
+
+router.post('/nino/activate', function (req, res) {
+    var body = req.body;
+    var head = req.headers;
+    users.autenticate(head, function (isOk, data) {
+        if (isOk)
+            ninos.activateNino(body, data.id, function (json, code) {
+                res.json(json);
+                res.statusCode = code;
+            });
+        else {
+            var json = {
+                res: 2,
+                result: data
+            };
+            res.json(json);
+            res.statusCode = 400;
+        }
+    });
+
+});
 
 router.get('/curso/:idCurso/ejercicios/:date', function (req, res) {
     var params = req.params;
@@ -111,7 +211,7 @@ router.post('/curso/ejercicio', function (req, res) {
     users.autenticate(head, function (isOk, data) {
         if (isOk)
             if (data.tipo === userTypes[0] || data.tipo === userTypes[1])
-                ejercicios.createEjercicioCurso(body, function (json, code) {
+                ejercicios.setEjercicioCurso(body, function (json, code) {
                     res.json(json);
                     res.statusCode = code;
                 });
@@ -135,48 +235,8 @@ router.post('/curso/ejercicio', function (req, res) {
 
 });
 
-//CALIFICACIONES
-router.get('/curso/:idCurso/notas/:fecha/nino/:idNino', function (req, res) {
-    var params = req.params;
-    var head = req.headers;
-    var body = {
-        idNino: params.idNino,
-        idCurso: params.idCurso,
-        fecha: params.fecha
-    };
-    users.autenticate(head, function (isOk, data) {
-        if (isOk) {
-            var array = body.fecha.split("-");
-            if (array.length > 1)
-                calif.getCalificacionesDia(body, function (json, code) {
-                    res.json(json);
-                    res.statusCode = code;
-                });
-            else
-                calif.getCalificacionesMes(body, function (json, code) {
-                    res.json(json);
-                    res.statusCode = code;
-                });
-        }
-        else {
-            var json = {
-                res: 2,
-                result: data
-            };
-            res.json(json);
-            res.statusCode = 400;
-        }
-    });
+router.get('/ejercicios/:idEjercicio/notas', function(req, res) {
 
-});
-
-router.post('/calificaciones/:idNino', function (req, res) {
-    var body = req.body;
-    var nino = req.param('idNino');
-    calif.setCalificaciones(body, nino, function (json, code) {
-        res.json(json);
-        res.statusCode = code;
-    });
 });
 
 app.use(router);

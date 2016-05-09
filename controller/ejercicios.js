@@ -21,8 +21,8 @@ function getEjerciciosCurso(idCurso, date, callback) {
     })
 }
 
-function createEjercicioCurso(body, callback) {
-    var sql = "INSERT INTO ejercicios(descripcion, url, Cursos_id, fecha) VALUES( "
+function setEjercicioCurso(body, callback) {
+    var sql = "INSERT INTO ejercicios(descripcion, url, idCurso, fecha) VALUES( "
         + "'" + body.desc + "' , "
         + "'" + body.url + "' , "
         + body.idCurso + " , "
@@ -39,7 +39,7 @@ function createEjercicioCurso(body, callback) {
             json.result = {
                 affectedRows: rows.affectedRows,
                 insertId: rows.insertId,
-                message: rows.message,
+                message: rows.message
             };
         }
         callback(json, statusCode);
@@ -55,7 +55,7 @@ function toObject(rows) {
             id: item.id,
             desc: item.descripcion,
             url: item.url,
-            idCurso: item.Curso_id,
+            idCurso: item.idCurso,
             fecha: date
         };
         result.push(object);
@@ -69,8 +69,8 @@ function dateToString(date) {
     var mes = date.getMonth() + 1;
     if (mes < 10) mes = "0" + mes;
     var ano = date.getFullYear();
-    return dia + "/" + mes + "/" + ano;
+    return dia + "-" + mes + "-" + ano;
 }
 
 module.exports.getEjerciciosCurso = getEjerciciosCurso;
-module.exports.createEjercicioCurso = createEjercicioCurso;
+module.exports.setEjercicioCurso = setEjercicioCurso;
