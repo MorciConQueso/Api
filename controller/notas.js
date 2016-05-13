@@ -8,9 +8,10 @@ var monthNames = ["January", "February", "March", "April", "May", "June",
 ];
 
 function getNotasDia(body, callback) {
-    var sql = "select c.id, c.comportamiento ,c.puntualidad ,c.ejercicios ,c.ayudaCompanieros from calificaciones c " +
+    var sql = "select c.id, c.comportamiento, c.puntualidad, c.ejercicios, c.ayudaCompanieros from calificaciones c " +
         "inner join calificaciones_has_ninos cn on c.id = cn.idCalificacion " +
-        "where cn.fecha = '" + body.fecha + "' and c.idCurso = " + body.idCurso + " and cn.idNino = " + body.idNino + ";";
+        "inner join ejercicios e on e.id = c.idEjercicio " +
+        "where e.fecha = '" + body.fecha + "' and e.idCurso = " + body.idCurso + " and cn.idNino = " + body.idNino + ";";
     bd.query(sql, function (err, rows, fields) {
         var json = {};
         var statusCode = 400;
@@ -29,7 +30,9 @@ function getNotasDia(body, callback) {
 function getNotasMes(body, callback) {
     var sql = "select c.id, c.comportamiento, c.puntualidad, c.ejercicios, c.ayudaCompanieros from calificaciones c " +
         "inner join calificaciones_has_ninos cn on c.id = cn.idCalificacion " +
-        "where month(cn.fecha) = month('" + body.fecha + "') and c.idCurso = " + body.idCurso + " and cn.idNino = " + body.idNino + ";";
+        "inner join ejercicios e on e.id = c.idEjercicio " +
+        "where month(e.fecha) = " + body.fecha + " and e.idCurso = " + body.idCurso + " and cn.idNino = " + body.idNino + ";";
+    console.log(sql);
     bd.query(sql, function (err, rows, fields) {
         var json = {};
         var statusCode = 400;

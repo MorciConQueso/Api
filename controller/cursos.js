@@ -27,10 +27,9 @@ function setCourse(body, callback) {
 }
 
 function getCoursesNino(idNino, callback) {
-    var sql = "select c.id, c.nombre, u.nombre as nomProf, u.apellidos as apeProf " +
+    var sql = "select c.* " +
         "from cursos c " + "inner join ninos_has_cursos nc on c.id = nc.idCurso " +
         "inner join ninos n on c.id = nc.idNino " +
-        "inner join usuarios u on c.idUsuario = u.id " +
         "where n.id = " + idNino;
     bd.query(sql, function (err, rows, fields) {
         var json = {};

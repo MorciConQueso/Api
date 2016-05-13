@@ -3,8 +3,8 @@
  */
 var bd = require('../bd.js');
 
-function getEjerciciosCurso(idCurso, date, callback) {
-    var sql = "select * from ejercicios where fecha = '" + date + "' and idCurso = " + idCurso;
+function getEjerciciosCurso(params, callback) {
+    var sql = "select id, titulo, descripcion, url, fecha from ejercicios where idCurso = " + params.idCurso;
     bd.query(sql, function (err, rows, fields) {
         var json = {};
         var statuscode = 400;
@@ -22,11 +22,12 @@ function getEjerciciosCurso(idCurso, date, callback) {
 }
 
 function setEjercicioCurso(body, callback) {
-    var sql = "INSERT INTO ejercicios(descripcion, url, idCurso, fecha) VALUES( "
-        + "'" + body.desc + "' , "
-        + "'" + body.url + "' , "
-        + body.idCurso + " , "
-        + "now())";
+    var sql = "insert into ejercicios(titulo, descripcion, url, idCurso, fecha) values( " +
+        "'" + body.titulo + "' , " +
+        "'" + body.desc + "' , " +
+        "'" + body.url + "' , " +
+        body.idCurso + " , " +
+        "now())";
     bd.query(sql, function (err, rows, fields) {
         var json = {};
         var statusCode = 400;
@@ -53,6 +54,7 @@ function toObject(rows) {
         var date = dateToString(item.fecha)
         var object = {
             id: item.id,
+            titulo: item.titulo,
             desc: item.descripcion,
             url: item.url,
             idCurso: item.idCurso,

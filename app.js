@@ -85,6 +85,28 @@ router.post('/user/ninos', function (req, res) {
     })
 });
 
+router.get('/nino/:idNino', function (req, res) {
+    var params = req.params;
+    var head = req.headers;
+    users.autenticate(head, function (isOk, data) {
+        if (isOk) {
+            if (data.tipo === userTypes[0] || data.tipo === userTypes[2])
+                ninos.getNino(params, data.id, function (json, code) {
+                    res.json(json);
+                    res.statusCode = code;
+                });
+        }
+        else {
+            var json = {
+                res: 2,
+                result: data
+            };
+            res.json(json);
+            res.statusCode = 400;
+        }
+    })
+});
+
 router.post('/cursos', function (req, res) {
     var body = req.body;
     var head = req.headers;
@@ -184,13 +206,11 @@ router.post('/nino/activate', function (req, res) {
 
 });
 
-router.get('/curso/:idCurso/ejercicios/:date', function (req, res) {
+router.get('/curso/:idCurso/ejercicios/', function (req, res) {
     var params = req.params;
     var head = req.headers;
-    var idCurso = params.idCurso;
-    var date = params.date;
     users.autenticate(head, function (isOk, data) {
-        if (isOk) ejercicios.getEjerciciosCurso(idCurso, date, function (json, code) {
+        if (isOk) ejercicios.getEjerciciosCurso(params, function (json, code) {
             res.json(json);
             res.statusCode = code;
         });
@@ -282,6 +302,48 @@ router.post('/ejercicio/nota', function (req, res) {
             res.statusCode = 400;
         }
     })
+});
+
+router.get('/notas/:fecha/curso/:idCurso/nino/:idNino', function (req, res) {
+    var params = req.params;
+    var head = req.headers;
+    console.log(head);
+    users.autenticate(head, function (isOk, data) {
+        console.log(isOk);
+        if (isOk)
+            notas.getNotasDia(params, function (json, code) {
+                res.json(json);
+                res.statusCode = code;
+            });
+        else {
+            var json = {
+                res: 2,
+                result: data
+            };
+            res.json(json);
+            res.statusCode = 400;
+        }
+    });
+});
+
+router.get('/notas/mes/:idCurso/:idNino/:fecha', function (req, res) {
+    var params = req.params;
+    var head = req.headers;
+    users.autenticate(head, function (isOk, data) {
+        if (isOk)
+            notas.getNotasMes(params, function (json, code) {
+                res.json(json);
+                res.statusCode = code;
+            });
+        else {
+            var json = {
+                res: 2,
+                result: data
+            };
+            res.json(json);
+            res.statusCode = 400;
+        }
+    });
 });
 
 app.use(router);

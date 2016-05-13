@@ -45,6 +45,30 @@ function getNinosUser(idUser, callback) {
     });
 }
 
+function getNino(params, idUser, callback) {
+    var sql = "select * from ninos where id = " + params.idNino;
+    bd.query(sql, function (err, rows, fields) {
+        var json = {};
+        var statusCode = 400;
+        if (err) {
+            json.res = 0;
+            json.result = err;
+        }
+        else {
+            if(rows[0].idUsuario === idUser) {
+                statusCode = 200;
+                json.res = 1;
+                json.nino = rows[0] || null;
+            }
+            else {
+                json.res = 3;
+                json.result = "This kid is not your son"
+            }
+        }
+        callback(json, statusCode);
+    })
+}
+
 function setNinoUser(body, callback) {
     var sql = "insert into ninos(nombre, apellidos, idUsuario) " +
         "values ('" + body.nombre + "', '" + body.apellidos + "', " + body.idPadre + ")";
@@ -71,3 +95,4 @@ function setNinoUser(body, callback) {
 module.exports.activateNino = activateNino;
 module.exports.getNinosUser = getNinosUser;
 module.exports.setNinoUser = setNinoUser;
+module.exports.getNino = getNino;
