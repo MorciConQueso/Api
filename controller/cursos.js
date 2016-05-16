@@ -3,6 +3,24 @@
  */
 var bd = require('../bd.js');
 
+function getCourse(params, callback) {
+    var sql = "select * from cursos where id = " + params.idCurso;
+    bd.query(sql, function(err, rows, fields) {
+        var json = {};
+        var statusCode = 400;
+        if (err) {
+            json.res = 0;
+            json.result = err
+        }
+        else {
+            statusCode = 200;
+            json.res = 1;
+            json.curso = rows[0];
+        }
+        callback(json, statusCode);
+    })
+}
+
 function setCourse(body, callback) {
     var sql = "insert into cursos(nombre, idProfesor) " +
         "values('" + body.nombre + "', " + body.idProfesor + ")";
@@ -73,5 +91,6 @@ function setNinoCurso(body, callback) {
 module.exports.getCoursesNino = getCoursesNino;
 module.exports.setNinoCurso = setNinoCurso;
 module.exports.setCourse = setCourse;
+module.exports.getCourse = getCourse;
 
 

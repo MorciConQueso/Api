@@ -21,6 +21,24 @@ function getEjerciciosCurso(params, callback) {
     })
 }
 
+function getEjerciciosCursoFecha(params, callback) {
+    var sql = "select id, titulo, descripcion, url, fecha from ejercicos where idCurso = " + params.idCurso + " and fecha = '" + params.fecha + "';";
+    bd.query(sql, function (err, rows, fields) {
+        var json = {};
+        var statusCode = 400;
+        if (err) {
+            json.res = 0;
+            json.result = err;
+        }
+        else {
+            statusCode = 200;
+            json.res = 1;
+            json.ejercicios = toObject(rows);
+        }
+        callback(json, statusCode);
+    })
+}
+
 function setEjercicioCurso(body, callback) {
     var sql = "insert into ejercicios(titulo, descripcion, url, idCurso, fecha) values( " +
         "'" + body.titulo + "' , " +
@@ -75,4 +93,5 @@ function dateToString(date) {
 }
 
 module.exports.getEjerciciosCurso = getEjerciciosCurso;
+module.exports.getEjerciciosCursoFecha = getEjerciciosCursoFecha;
 module.exports.setEjercicioCurso = setEjercicioCurso;

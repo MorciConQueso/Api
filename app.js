@@ -107,6 +107,27 @@ router.get('/nino/:idNino', function (req, res) {
     })
 });
 
+router.get('/curso/:idCurso', function (req, res) {
+    var params = req.params;
+    var head = req.headers;
+    users.autenticate(head, function (isOk, data) {
+        if (isOk) {
+            courses.getCourse(params, function (json, code) {
+                res.json(json);
+                res.statusCode = code;
+            });
+        }
+        else {
+            var json = {
+                res: 2,
+                result: data
+            };
+            res.json(json);
+            res.statusCode = 400;
+        }
+    })
+});
+
 router.post('/cursos', function (req, res) {
     var body = req.body;
     var head = req.headers;
@@ -137,6 +158,7 @@ router.post('/cursos', function (req, res) {
 });
 
 router.get('/nino/:idNino/cursos', function (req, res) {
+
     var params = req.params;
     var head = req.headers;
     var idNino = params.idNino;
@@ -210,10 +232,31 @@ router.get('/curso/:idCurso/ejercicios/', function (req, res) {
     var params = req.params;
     var head = req.headers;
     users.autenticate(head, function (isOk, data) {
-        if (isOk) ejercicios.getEjerciciosCurso(params, function (json, code) {
+        if (isOk)
+            ejercicios.getEjerciciosCurso(params, function (json, code) {
+                res.json(json);
+                res.statusCode = code;
+            });
+        else {
+            var json = {
+                res: 2,
+                result: data
+            };
             res.json(json);
-            res.statusCode = code;
-        });
+            res.statusCode = 400;
+        }
+    });
+});
+
+router.get('curso/:idCurso/ejercicios/:fecha', function (req, res) {
+    var params = req.params;
+    var head = req.headers;
+    users.autenticate(head, function (isOk, data) {
+        if (isOk)
+            ejercicios.getEjerciciosCursoFecha(params, function (json, code) {
+                res.json(json);
+                res.statusCode = code;
+            });
         else {
             var json = {
                 res: 2,
@@ -307,9 +350,7 @@ router.post('/ejercicio/nota', function (req, res) {
 router.get('/notas/:fecha/curso/:idCurso/nino/:idNino', function (req, res) {
     var params = req.params;
     var head = req.headers;
-    console.log(head);
     users.autenticate(head, function (isOk, data) {
-        console.log(isOk);
         if (isOk)
             notas.getNotasDia(params, function (json, code) {
                 res.json(json);

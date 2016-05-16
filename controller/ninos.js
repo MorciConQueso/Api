@@ -46,27 +46,37 @@ function getNinosUser(idUser, callback) {
 }
 
 function getNino(params, idUser, callback) {
-    var sql = "select * from ninos where id = " + params.idNino;
-    bd.query(sql, function (err, rows, fields) {
-        var json = {};
-        var statusCode = 400;
-        if (err) {
-            json.res = 0;
-            json.result = err;
-        }
-        else {
-            if(rows[0].idUsuario === idUser) {
-                statusCode = 200;
-                json.res = 1;
-                json.nino = rows[0] || null;
+    if (params.idNino === -1) {
+        json({res: 4, result: "idNino no valido"});
+        callback(json, 400);
+    }
+    else {
+        var sql = "select * from ninos where id = " + params.idNino;
+        bd.query(sql, function (err, rows, fields) {
+            var json = {};
+            var statusCode = 400;
+            if (err) {
+                json.res = 0;
+                json.result = err;
             }
             else {
-                json.res = 3;
-                json.result = "This kid is not your son"
+                if(rows.length === 0) {
+                    json.res = 3;
+                    json.result = "Niño not found";
+                }
+                else if (rows[0].idUsuario === idUser) {
+                    statusCode = 200;
+                    json.res = 1;
+                    json.nino = rows[0] || null;
+                }
+                else {
+                    json.res = 3;
+                    json.result = "This kid is not your son"
+                }
             }
-        }
-        callback(json, statusCode);
-    })
+            callback(json, statusCode);
+        })
+    }
 }
 
 function setNinoUser(body, callback) {
