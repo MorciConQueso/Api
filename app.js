@@ -248,7 +248,7 @@ router.get('/curso/:idCurso/ejercicios/', function (req, res) {
     });
 });
 
-router.get('curso/:idCurso/ejercicios/:fecha', function (req, res) {
+router.get('/curso/:idCurso/ejercicios/:fecha', function (req, res) {
     var params = req.params;
     var head = req.headers;
     users.autenticate(head, function (isOk, data) {

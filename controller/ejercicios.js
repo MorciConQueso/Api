@@ -22,7 +22,7 @@ function getEjerciciosCurso(params, callback) {
 }
 
 function getEjerciciosCursoFecha(params, callback) {
-    var sql = "select id, titulo, descripcion, url, fecha from ejercicos where idCurso = " + params.idCurso + " and fecha = '" + params.fecha + "';";
+    var sql = "select id, titulo, descripcion, url, fecha from ejercicios where idCurso = " + params.idCurso + " and fecha = '" + params.fecha + "';";
     bd.query(sql, function (err, rows, fields) {
         var json = {};
         var statusCode = 400;
