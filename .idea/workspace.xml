@@ -6,7 +6,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/cursos.js" afterPath="$PROJECT_DIR$/controller/cursos.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/ejercicios.js" afterPath="$PROJECT_DIR$/controller/ejercicios.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/ninos.js" afterPath="$PROJECT_DIR$/controller/ninos.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/notas.js" afterPath="$PROJECT_DIR$/controller/notas.js" />
     </list>
     <ignored path="AcademyKidsApi.iws" />
@@ -29,87 +28,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.1010453">
-              <caret line="313" column="23" selection-start-line="313" selection-start-column="23" selection-end-line="313" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="393" column="25" selection-start-line="393" selection-start-column="0" selection-end-line="412" selection-end-column="0" />
               <folding>
-                <element signature="e#713#850#0" expanded="false" />
-                <element signature="e#904#1043#0" expanded="false" />
-                <element signature="e#1093#1508#0" expanded="false" />
-                <element signature="e#1559#2308#0" expanded="false" />
-                <element signature="e#2360#2933#0" expanded="false" />
-                <element signature="e#2980#3730#0" expanded="false" />
-                <element signature="e#3789#4268#0" expanded="false" />
-                <element signature="e#4320#5103#0" expanded="false" />
-                <element signature="e#5157#5629#0" expanded="false" />
-                <element signature="e#5695#6150#0" expanded="false" />
-                <element signature="e#6206#6998#0" expanded="false" />
-                <element signature="e#7090#7538#0" expanded="false" />
+                <element signature="e#798#935#0" expanded="false" />
+                <element signature="e#989#1128#0" expanded="false" />
+                <element signature="e#1178#1593#0" expanded="false" />
+                <element signature="e#1644#2393#0" expanded="false" />
+                <element signature="e#2445#3018#0" expanded="false" />
+                <element signature="e#3072#3550#0" expanded="false" />
+                <element signature="e#3597#4347#0" expanded="false" />
+                <element signature="e#4406#4886#0" expanded="false" />
+                <element signature="e#4938#5721#0" expanded="false" />
+                <element signature="e#5775#6247#0" expanded="false" />
+                <element signature="e#6313#6792#0" expanded="false" />
+                <element signature="e#6864#7348#0" expanded="false" />
+                <element signature="e#7404#8196#0" expanded="false" />
+                <element signature="e#8257#8725#0" expanded="false" />
+                <element signature="e#8777#9556#0" expanded="false" />
+                <element signature="e#9629#10099#0" expanded="false" />
+                <element signature="e#10179#10648#0" expanded="false" />
+                <element signature="e#10732#11199#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="notas.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="notas.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controller/notas.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="usuarios.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/usuarios.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="74" column="66" selection-start-line="74" selection-start-column="66" selection-end-line="74" selection-end-column="66" />
+            <state vertical-scroll-proportion="0.3321719">
+              <caret line="52" column="39" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
               <folding>
-                <element signature="e#0#44#0" expanded="false" />
-                <element signature="n#!!block;n#login#0" expanded="false" />
-                <element signature="n#!!block;n#register#0" expanded="false" />
-                <element signature="n#!!block;n#generateApiKey#0" expanded="false" />
-                <element signature="n#!!block;n#cryptPass#0" expanded="false" />
-                <element signature="n#!!block;n#decrypPass#0" expanded="false" />
-                <element signature="n#!!block;n#checkPassword#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cursos.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/cursos.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="51" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ninos.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/ninos.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="48" column="27" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#44#0" expanded="false" />
-                <element signature="n#!!block;n#activateNino#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ejercicios.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/ejercicios.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
-              <folding>
-                <element signature="e#0#44#0" expanded="false" />
+                <element signature="n#!!block;n#getNotasCurso#0" expanded="false" />
+                <element signature="n#!!block;n#getNotasClase#0" expanded="false" />
+                <element signature="n#!!block;n#getNotasMes#0" expanded="false" />
                 <element signature="n#!!block;n#toObject#0" expanded="false" />
                 <element signature="n#!!block;n#dateToString#0" expanded="false" />
               </folding>
@@ -141,12 +97,12 @@
         <option value="$PROJECT_DIR$/bd.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/controller/usuarios.js" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/controller/notas.js" />
-        <option value="$PROJECT_DIR$/controller/ejercicios.js" />
         <option value="$PROJECT_DIR$/controller/ninos.js" />
-        <option value="$PROJECT_DIR$/controller/cursos.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/controller/cursos.js" />
+        <option value="$PROJECT_DIR$/controller/ejercicios.js" />
+        <option value="$PROJECT_DIR$/controller/notas.js" />
       </list>
     </option>
   </component>
@@ -161,7 +117,7 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
-    <option name="width" value="974" />
+    <option name="width" value="1258" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -175,7 +131,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -188,7 +144,44 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AcademyKidsApi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AcademyKidsApi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AcademyKidsApi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AcademyKidsApi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AcademyKidsApi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -197,6 +190,7 @@
     <property name="ignore_missing_gitignore" value="true" />
     <property name="settings.editor.selected.configurable" value="terminal" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="SearchEverywhereHistoryKey" value="toO&#9;null&#9;null" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -287,20 +281,38 @@
       <option name="project" value="LOCAL" />
       <updated>1462779282343</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="v1">
+      <created>1463125776407</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1463125776407</updated>
+    </task>
+    <task id="LOCAL-00010" summary="get ejercicios fecha">
+      <created>1463394237929</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1463394237929</updated>
+    </task>
+    <task id="LOCAL-00011" summary="v2">
+      <created>1463414626916</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1463414626916</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="-7" y="0" width="1258" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3017149" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23791622" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66998893" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6696529" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -331,7 +343,10 @@
     <MESSAGE value="getEjerciciosCurso" />
     <MESSAGE value="createEjercicioCurso" />
     <MESSAGE value="login apikey + cursosNinos" />
-    <option name="LAST_COMMIT_MESSAGE" value="login apikey + cursosNinos" />
+    <MESSAGE value="v1" />
+    <MESSAGE value="get ejercicios fecha" />
+    <MESSAGE value="v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="v2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -340,8 +355,13 @@
           <url>file://$PROJECT_DIR$/controller/ninos.js</url>
           <line>3</line>
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/controller/cursos.js</url>
+          <line>23</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -352,7 +372,7 @@
           <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
-            <element signature="n#!!block;n#toObject#0" expanded="false" />
+            <element signature="n#!!block;n#setEjercicioCurso#0" expanded="false" />
             <element signature="n#!!block;n#dateToString#0" expanded="false" />
           </folding>
         </state>
@@ -363,18 +383,24 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#713#850#0" expanded="false" />
-            <element signature="e#904#1043#0" expanded="false" />
-            <element signature="e#1093#1508#0" expanded="false" />
-            <element signature="e#1559#2308#0" expanded="false" />
-            <element signature="e#2360#2933#0" expanded="false" />
-            <element signature="e#2980#3730#0" expanded="false" />
-            <element signature="e#3789#4268#0" expanded="false" />
-            <element signature="e#4320#5103#0" expanded="false" />
-            <element signature="e#5157#5629#0" expanded="false" />
-            <element signature="e#5695#6150#0" expanded="false" />
-            <element signature="e#6206#6998#0" expanded="false" />
-            <element signature="e#7090#7538#0" expanded="false" />
+            <element signature="e#798#935#0" expanded="false" />
+            <element signature="e#989#1128#0" expanded="false" />
+            <element signature="e#1178#1593#0" expanded="false" />
+            <element signature="e#1644#2393#0" expanded="false" />
+            <element signature="e#2445#3018#0" expanded="false" />
+            <element signature="e#3072#3550#0" expanded="false" />
+            <element signature="e#3597#4347#0" expanded="false" />
+            <element signature="e#4406#4886#0" expanded="false" />
+            <element signature="e#4938#5721#0" expanded="false" />
+            <element signature="e#5775#6247#0" expanded="false" />
+            <element signature="e#6313#6792#0" expanded="false" />
+            <element signature="e#6864#7348#0" expanded="false" />
+            <element signature="e#7404#8196#0" expanded="false" />
+            <element signature="e#8257#8725#0" expanded="false" />
+            <element signature="e#8777#9556#0" expanded="false" />
+            <element signature="e#9629#10099#0" expanded="false" />
+            <element signature="e#10179#10648#0" expanded="false" />
+            <element signature="e#10732#11199#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -406,7 +432,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#!!block;n#getCourse#0" expanded="false" />
+            <element signature="n#!!block;n#setCourse#0" expanded="false" />
+            <element signature="n#!!block;n#getCoursesNino#0" expanded="false" />
+            <element signature="n#!!block;n#setNinoCurso#0" expanded="false" />
+            <element signature="n#!!block;n#setClase#0" expanded="false" />
+            <element signature="n#!!block;n#getClases#0" expanded="false" />
+            <element signature="n#!!block;n#toObject#0" expanded="false" />
+            <element signature="n#!!block;n#dateToString#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -417,6 +452,9 @@
           <folding>
             <element signature="e#0#44#0" expanded="false" />
             <element signature="n#!!block;n#activateNino#0" expanded="false" />
+            <element signature="n#!!block;n#getNinosUser#0" expanded="false" />
+            <element signature="n#!!block;n#getNino#0" expanded="false" />
+            <element signature="n#!!block;n#setNinoUser#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -427,7 +465,7 @@
           <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
-            <element signature="n#!!block;n#toObject#0" expanded="false" />
+            <element signature="n#!!block;n#setEjercicioCurso#0" expanded="false" />
             <element signature="n#!!block;n#dateToString#0" expanded="false" />
           </folding>
         </state>
@@ -438,18 +476,24 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#713#850#0" expanded="false" />
-            <element signature="e#904#1043#0" expanded="false" />
-            <element signature="e#1093#1508#0" expanded="false" />
-            <element signature="e#1559#2308#0" expanded="false" />
-            <element signature="e#2360#2933#0" expanded="false" />
-            <element signature="e#2980#3730#0" expanded="false" />
-            <element signature="e#3789#4268#0" expanded="false" />
-            <element signature="e#4320#5103#0" expanded="false" />
-            <element signature="e#5157#5629#0" expanded="false" />
-            <element signature="e#5695#6150#0" expanded="false" />
-            <element signature="e#6206#6998#0" expanded="false" />
-            <element signature="e#7090#7538#0" expanded="false" />
+            <element signature="e#798#935#0" expanded="false" />
+            <element signature="e#989#1128#0" expanded="false" />
+            <element signature="e#1178#1593#0" expanded="false" />
+            <element signature="e#1644#2393#0" expanded="false" />
+            <element signature="e#2445#3018#0" expanded="false" />
+            <element signature="e#3072#3550#0" expanded="false" />
+            <element signature="e#3597#4347#0" expanded="false" />
+            <element signature="e#4406#4886#0" expanded="false" />
+            <element signature="e#4938#5721#0" expanded="false" />
+            <element signature="e#5775#6247#0" expanded="false" />
+            <element signature="e#6313#6792#0" expanded="false" />
+            <element signature="e#6864#7348#0" expanded="false" />
+            <element signature="e#7404#8196#0" expanded="false" />
+            <element signature="e#8257#8725#0" expanded="false" />
+            <element signature="e#8777#9556#0" expanded="false" />
+            <element signature="e#9629#10099#0" expanded="false" />
+            <element signature="e#10179#10648#0" expanded="false" />
+            <element signature="e#10732#11199#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -481,7 +525,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#!!block;n#getCourse#0" expanded="false" />
+            <element signature="n#!!block;n#setCourse#0" expanded="false" />
+            <element signature="n#!!block;n#getCoursesNino#0" expanded="false" />
+            <element signature="n#!!block;n#setNinoCurso#0" expanded="false" />
+            <element signature="n#!!block;n#setClase#0" expanded="false" />
+            <element signature="n#!!block;n#getClases#0" expanded="false" />
+            <element signature="n#!!block;n#toObject#0" expanded="false" />
+            <element signature="n#!!block;n#dateToString#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -492,6 +545,9 @@
           <folding>
             <element signature="e#0#44#0" expanded="false" />
             <element signature="n#!!block;n#activateNino#0" expanded="false" />
+            <element signature="n#!!block;n#getNinosUser#0" expanded="false" />
+            <element signature="n#!!block;n#getNino#0" expanded="false" />
+            <element signature="n#!!block;n#setNinoUser#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -502,7 +558,7 @@
           <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
-            <element signature="n#!!block;n#toObject#0" expanded="false" />
+            <element signature="n#!!block;n#setEjercicioCurso#0" expanded="false" />
             <element signature="n#!!block;n#dateToString#0" expanded="false" />
           </folding>
         </state>
@@ -513,18 +569,24 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#713#850#0" expanded="false" />
-            <element signature="e#904#1043#0" expanded="false" />
-            <element signature="e#1093#1508#0" expanded="false" />
-            <element signature="e#1559#2308#0" expanded="false" />
-            <element signature="e#2360#2933#0" expanded="false" />
-            <element signature="e#2980#3730#0" expanded="false" />
-            <element signature="e#3789#4268#0" expanded="false" />
-            <element signature="e#4320#5103#0" expanded="false" />
-            <element signature="e#5157#5629#0" expanded="false" />
-            <element signature="e#5695#6150#0" expanded="false" />
-            <element signature="e#6206#6998#0" expanded="false" />
-            <element signature="e#7090#7538#0" expanded="false" />
+            <element signature="e#798#935#0" expanded="false" />
+            <element signature="e#989#1128#0" expanded="false" />
+            <element signature="e#1178#1593#0" expanded="false" />
+            <element signature="e#1644#2393#0" expanded="false" />
+            <element signature="e#2445#3018#0" expanded="false" />
+            <element signature="e#3072#3550#0" expanded="false" />
+            <element signature="e#3597#4347#0" expanded="false" />
+            <element signature="e#4406#4886#0" expanded="false" />
+            <element signature="e#4938#5721#0" expanded="false" />
+            <element signature="e#5775#6247#0" expanded="false" />
+            <element signature="e#6313#6792#0" expanded="false" />
+            <element signature="e#6864#7348#0" expanded="false" />
+            <element signature="e#7404#8196#0" expanded="false" />
+            <element signature="e#8257#8725#0" expanded="false" />
+            <element signature="e#8777#9556#0" expanded="false" />
+            <element signature="e#9629#10099#0" expanded="false" />
+            <element signature="e#10179#10648#0" expanded="false" />
+            <element signature="e#10732#11199#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -556,7 +618,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#!!block;n#getCourse#0" expanded="false" />
+            <element signature="n#!!block;n#setCourse#0" expanded="false" />
+            <element signature="n#!!block;n#getCoursesNino#0" expanded="false" />
+            <element signature="n#!!block;n#setNinoCurso#0" expanded="false" />
+            <element signature="n#!!block;n#setClase#0" expanded="false" />
+            <element signature="n#!!block;n#getClases#0" expanded="false" />
+            <element signature="n#!!block;n#toObject#0" expanded="false" />
+            <element signature="n#!!block;n#dateToString#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -567,6 +638,9 @@
           <folding>
             <element signature="e#0#44#0" expanded="false" />
             <element signature="n#!!block;n#activateNino#0" expanded="false" />
+            <element signature="n#!!block;n#getNinosUser#0" expanded="false" />
+            <element signature="n#!!block;n#getNino#0" expanded="false" />
+            <element signature="n#!!block;n#setNinoUser#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -577,7 +651,7 @@
           <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
-            <element signature="n#!!block;n#toObject#0" expanded="false" />
+            <element signature="n#!!block;n#setEjercicioCurso#0" expanded="false" />
             <element signature="n#!!block;n#dateToString#0" expanded="false" />
           </folding>
         </state>
@@ -588,18 +662,24 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="120" column="30" selection-start-line="120" selection-start-column="30" selection-end-line="120" selection-end-column="30" />
           <folding>
-            <element signature="e#713#850#0" expanded="false" />
-            <element signature="e#904#1043#0" expanded="false" />
-            <element signature="e#1093#1508#0" expanded="false" />
-            <element signature="e#1559#2308#0" expanded="false" />
-            <element signature="e#2360#2933#0" expanded="false" />
-            <element signature="e#2980#3730#0" expanded="false" />
-            <element signature="e#3789#4268#0" expanded="false" />
-            <element signature="e#4320#5103#0" expanded="false" />
-            <element signature="e#5157#5629#0" expanded="false" />
-            <element signature="e#5695#6150#0" expanded="false" />
-            <element signature="e#6206#6998#0" expanded="false" />
-            <element signature="e#7090#7538#0" expanded="false" />
+            <element signature="e#798#935#0" expanded="false" />
+            <element signature="e#989#1128#0" expanded="false" />
+            <element signature="e#1178#1593#0" expanded="false" />
+            <element signature="e#1644#2393#0" expanded="false" />
+            <element signature="e#2445#3018#0" expanded="false" />
+            <element signature="e#3072#3550#0" expanded="false" />
+            <element signature="e#3597#4347#0" expanded="false" />
+            <element signature="e#4406#4886#0" expanded="false" />
+            <element signature="e#4938#5721#0" expanded="false" />
+            <element signature="e#5775#6247#0" expanded="false" />
+            <element signature="e#6313#6792#0" expanded="false" />
+            <element signature="e#6864#7348#0" expanded="false" />
+            <element signature="e#7404#8196#0" expanded="false" />
+            <element signature="e#8257#8725#0" expanded="false" />
+            <element signature="e#8777#9556#0" expanded="false" />
+            <element signature="e#9629#10099#0" expanded="false" />
+            <element signature="e#10179#10648#0" expanded="false" />
+            <element signature="e#10732#11199#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -608,7 +688,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#!!block;n#getCourse#0" expanded="false" />
+            <element signature="n#!!block;n#setCourse#0" expanded="false" />
+            <element signature="n#!!block;n#getCoursesNino#0" expanded="false" />
+            <element signature="n#!!block;n#setNinoCurso#0" expanded="false" />
+            <element signature="n#!!block;n#setClase#0" expanded="false" />
+            <element signature="n#!!block;n#getClases#0" expanded="false" />
+            <element signature="n#!!block;n#toObject#0" expanded="false" />
+            <element signature="n#!!block;n#dateToString#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -619,6 +708,9 @@
           <folding>
             <element signature="e#0#44#0" expanded="false" />
             <element signature="n#!!block;n#activateNino#0" expanded="false" />
+            <element signature="n#!!block;n#getNinosUser#0" expanded="false" />
+            <element signature="n#!!block;n#getNino#0" expanded="false" />
+            <element signature="n#!!block;n#setNinoUser#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -636,7 +728,7 @@
           <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
-            <element signature="n#!!block;n#toObject#0" expanded="false" />
+            <element signature="n#!!block;n#setEjercicioCurso#0" expanded="false" />
             <element signature="n#!!block;n#dateToString#0" expanded="false" />
           </folding>
         </state>
@@ -647,18 +739,24 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="120" column="30" selection-start-line="120" selection-start-column="30" selection-end-line="120" selection-end-column="30" />
           <folding>
-            <element signature="e#713#850#0" expanded="false" />
-            <element signature="e#904#1043#0" expanded="false" />
-            <element signature="e#1093#1508#0" expanded="false" />
-            <element signature="e#1559#2308#0" expanded="false" />
-            <element signature="e#2360#2933#0" expanded="false" />
-            <element signature="e#2980#3730#0" expanded="false" />
-            <element signature="e#3789#4268#0" expanded="false" />
-            <element signature="e#4320#5103#0" expanded="false" />
-            <element signature="e#5157#5629#0" expanded="false" />
-            <element signature="e#5695#6150#0" expanded="false" />
-            <element signature="e#6206#6998#0" expanded="false" />
-            <element signature="e#7090#7538#0" expanded="false" />
+            <element signature="e#798#935#0" expanded="false" />
+            <element signature="e#989#1128#0" expanded="false" />
+            <element signature="e#1178#1593#0" expanded="false" />
+            <element signature="e#1644#2393#0" expanded="false" />
+            <element signature="e#2445#3018#0" expanded="false" />
+            <element signature="e#3072#3550#0" expanded="false" />
+            <element signature="e#3597#4347#0" expanded="false" />
+            <element signature="e#4406#4886#0" expanded="false" />
+            <element signature="e#4938#5721#0" expanded="false" />
+            <element signature="e#5775#6247#0" expanded="false" />
+            <element signature="e#6313#6792#0" expanded="false" />
+            <element signature="e#6864#7348#0" expanded="false" />
+            <element signature="e#7404#8196#0" expanded="false" />
+            <element signature="e#8257#8725#0" expanded="false" />
+            <element signature="e#8777#9556#0" expanded="false" />
+            <element signature="e#9629#10099#0" expanded="false" />
+            <element signature="e#10179#10648#0" expanded="false" />
+            <element signature="e#10732#11199#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -667,7 +765,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
-          <folding />
+          <folding>
+            <element signature="n#!!block;n#getCourse#0" expanded="false" />
+            <element signature="n#!!block;n#setCourse#0" expanded="false" />
+            <element signature="n#!!block;n#getCoursesNino#0" expanded="false" />
+            <element signature="n#!!block;n#setNinoCurso#0" expanded="false" />
+            <element signature="n#!!block;n#setClase#0" expanded="false" />
+            <element signature="n#!!block;n#getClases#0" expanded="false" />
+            <element signature="n#!!block;n#toObject#0" expanded="false" />
+            <element signature="n#!!block;n#dateToString#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -678,6 +785,9 @@
           <folding>
             <element signature="e#0#44#0" expanded="false" />
             <element signature="n#!!block;n#activateNino#0" expanded="false" />
+            <element signature="n#!!block;n#getNinosUser#0" expanded="false" />
+            <element signature="n#!!block;n#getNino#0" expanded="false" />
+            <element signature="n#!!block;n#setNinoUser#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -688,7 +798,7 @@
           <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
-            <element signature="n#!!block;n#toObject#0" expanded="false" />
+            <element signature="n#!!block;n#setEjercicioCurso#0" expanded="false" />
             <element signature="n#!!block;n#dateToString#0" expanded="false" />
           </folding>
         </state>
@@ -699,18 +809,24 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="101" column="39" selection-start-line="101" selection-start-column="39" selection-end-line="101" selection-end-column="39" />
           <folding>
-            <element signature="e#713#850#0" expanded="false" />
-            <element signature="e#904#1043#0" expanded="false" />
-            <element signature="e#1093#1508#0" expanded="false" />
-            <element signature="e#1559#2308#0" expanded="false" />
-            <element signature="e#2360#2933#0" expanded="false" />
-            <element signature="e#2980#3730#0" expanded="false" />
-            <element signature="e#3789#4268#0" expanded="false" />
-            <element signature="e#4320#5103#0" expanded="false" />
-            <element signature="e#5157#5629#0" expanded="false" />
-            <element signature="e#5695#6150#0" expanded="false" />
-            <element signature="e#6206#6998#0" expanded="false" />
-            <element signature="e#7090#7538#0" expanded="false" />
+            <element signature="e#798#935#0" expanded="false" />
+            <element signature="e#989#1128#0" expanded="false" />
+            <element signature="e#1178#1593#0" expanded="false" />
+            <element signature="e#1644#2393#0" expanded="false" />
+            <element signature="e#2445#3018#0" expanded="false" />
+            <element signature="e#3072#3550#0" expanded="false" />
+            <element signature="e#3597#4347#0" expanded="false" />
+            <element signature="e#4406#4886#0" expanded="false" />
+            <element signature="e#4938#5721#0" expanded="false" />
+            <element signature="e#5775#6247#0" expanded="false" />
+            <element signature="e#6313#6792#0" expanded="false" />
+            <element signature="e#6864#7348#0" expanded="false" />
+            <element signature="e#7404#8196#0" expanded="false" />
+            <element signature="e#8257#8725#0" expanded="false" />
+            <element signature="e#8777#9556#0" expanded="false" />
+            <element signature="e#9629#10099#0" expanded="false" />
+            <element signature="e#10179#10648#0" expanded="false" />
+            <element signature="e#10732#11199#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -719,7 +835,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
-          <folding />
+          <folding>
+            <element signature="n#!!block;n#getCourse#0" expanded="false" />
+            <element signature="n#!!block;n#setCourse#0" expanded="false" />
+            <element signature="n#!!block;n#getCoursesNino#0" expanded="false" />
+            <element signature="n#!!block;n#setNinoCurso#0" expanded="false" />
+            <element signature="n#!!block;n#setClase#0" expanded="false" />
+            <element signature="n#!!block;n#getClases#0" expanded="false" />
+            <element signature="n#!!block;n#toObject#0" expanded="false" />
+            <element signature="n#!!block;n#dateToString#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -730,6 +855,9 @@
           <folding>
             <element signature="e#0#44#0" expanded="false" />
             <element signature="n#!!block;n#activateNino#0" expanded="false" />
+            <element signature="n#!!block;n#getNinosUser#0" expanded="false" />
+            <element signature="n#!!block;n#getNino#0" expanded="false" />
+            <element signature="n#!!block;n#setNinoUser#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -740,7 +868,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
-            <element signature="n#!!block;n#toObject#0" expanded="false" />
+            <element signature="n#!!block;n#setEjercicioCurso#0" expanded="false" />
             <element signature="n#!!block;n#dateToString#0" expanded="false" />
           </folding>
         </state>
@@ -751,18 +879,24 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="60" column="14" selection-start-line="60" selection-start-column="14" selection-end-line="60" selection-end-column="14" />
           <folding>
-            <element signature="e#713#850#0" expanded="false" />
-            <element signature="e#904#1043#0" expanded="false" />
-            <element signature="e#1093#1508#0" expanded="false" />
-            <element signature="e#1559#2308#0" expanded="false" />
-            <element signature="e#2360#2933#0" expanded="false" />
-            <element signature="e#2980#3730#0" expanded="false" />
-            <element signature="e#3789#4268#0" expanded="false" />
-            <element signature="e#4320#5103#0" expanded="false" />
-            <element signature="e#5157#5629#0" expanded="false" />
-            <element signature="e#5695#6150#0" expanded="false" />
-            <element signature="e#6206#6998#0" expanded="false" />
-            <element signature="e#7090#7538#0" expanded="false" />
+            <element signature="e#798#935#0" expanded="false" />
+            <element signature="e#989#1128#0" expanded="false" />
+            <element signature="e#1178#1593#0" expanded="false" />
+            <element signature="e#1644#2393#0" expanded="false" />
+            <element signature="e#2445#3018#0" expanded="false" />
+            <element signature="e#3072#3550#0" expanded="false" />
+            <element signature="e#3597#4347#0" expanded="false" />
+            <element signature="e#4406#4886#0" expanded="false" />
+            <element signature="e#4938#5721#0" expanded="false" />
+            <element signature="e#5775#6247#0" expanded="false" />
+            <element signature="e#6313#6792#0" expanded="false" />
+            <element signature="e#6864#7348#0" expanded="false" />
+            <element signature="e#7404#8196#0" expanded="false" />
+            <element signature="e#8257#8725#0" expanded="false" />
+            <element signature="e#8777#9556#0" expanded="false" />
+            <element signature="e#9629#10099#0" expanded="false" />
+            <element signature="e#10179#10648#0" expanded="false" />
+            <element signature="e#10732#11199#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -781,6 +915,9 @@
           <folding>
             <element signature="e#0#44#0" expanded="false" />
             <element signature="n#!!block;n#activateNino#0" expanded="false" />
+            <element signature="n#!!block;n#getNinosUser#0" expanded="false" />
+            <element signature="n#!!block;n#getNino#0" expanded="false" />
+            <element signature="n#!!block;n#setNinoUser#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -807,7 +944,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
-            <element signature="n#!!block;n#toObject#0" expanded="false" />
+            <element signature="n#!!block;n#setEjercicioCurso#0" expanded="false" />
             <element signature="n#!!block;n#dateToString#0" expanded="false" />
           </folding>
         </state>
@@ -818,18 +955,24 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
           <folding>
-            <element signature="e#713#850#0" expanded="false" />
-            <element signature="e#904#1043#0" expanded="false" />
-            <element signature="e#1093#1508#0" expanded="false" />
-            <element signature="e#1559#2308#0" expanded="false" />
-            <element signature="e#2360#2933#0" expanded="false" />
-            <element signature="e#2980#3730#0" expanded="false" />
-            <element signature="e#3789#4268#0" expanded="false" />
-            <element signature="e#4320#5103#0" expanded="false" />
-            <element signature="e#5157#5629#0" expanded="false" />
-            <element signature="e#5695#6150#0" expanded="false" />
-            <element signature="e#6206#6998#0" expanded="false" />
-            <element signature="e#7090#7538#0" expanded="false" />
+            <element signature="e#798#935#0" expanded="false" />
+            <element signature="e#989#1128#0" expanded="false" />
+            <element signature="e#1178#1593#0" expanded="false" />
+            <element signature="e#1644#2393#0" expanded="false" />
+            <element signature="e#2445#3018#0" expanded="false" />
+            <element signature="e#3072#3550#0" expanded="false" />
+            <element signature="e#3597#4347#0" expanded="false" />
+            <element signature="e#4406#4886#0" expanded="false" />
+            <element signature="e#4938#5721#0" expanded="false" />
+            <element signature="e#5775#6247#0" expanded="false" />
+            <element signature="e#6313#6792#0" expanded="false" />
+            <element signature="e#6864#7348#0" expanded="false" />
+            <element signature="e#7404#8196#0" expanded="false" />
+            <element signature="e#8257#8725#0" expanded="false" />
+            <element signature="e#8777#9556#0" expanded="false" />
+            <element signature="e#9629#10099#0" expanded="false" />
+            <element signature="e#10179#10648#0" expanded="false" />
+            <element signature="e#10732#11199#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -841,6 +984,9 @@
           <folding>
             <element signature="e#0#44#0" expanded="false" />
             <element signature="n#!!block;n#activateNino#0" expanded="false" />
+            <element signature="n#!!block;n#getNinosUser#0" expanded="false" />
+            <element signature="n#!!block;n#getNino#0" expanded="false" />
+            <element signature="n#!!block;n#setNinoUser#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -866,18 +1012,24 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
           <folding>
-            <element signature="e#713#850#0" expanded="false" />
-            <element signature="e#904#1043#0" expanded="false" />
-            <element signature="e#1093#1508#0" expanded="false" />
-            <element signature="e#1559#2308#0" expanded="false" />
-            <element signature="e#2360#2933#0" expanded="false" />
-            <element signature="e#2980#3730#0" expanded="false" />
-            <element signature="e#3789#4268#0" expanded="false" />
-            <element signature="e#4320#5103#0" expanded="false" />
-            <element signature="e#5157#5629#0" expanded="false" />
-            <element signature="e#5695#6150#0" expanded="false" />
-            <element signature="e#6206#6998#0" expanded="false" />
-            <element signature="e#7090#7538#0" expanded="false" />
+            <element signature="e#798#935#0" expanded="false" />
+            <element signature="e#989#1128#0" expanded="false" />
+            <element signature="e#1178#1593#0" expanded="false" />
+            <element signature="e#1644#2393#0" expanded="false" />
+            <element signature="e#2445#3018#0" expanded="false" />
+            <element signature="e#3072#3550#0" expanded="false" />
+            <element signature="e#3597#4347#0" expanded="false" />
+            <element signature="e#4406#4886#0" expanded="false" />
+            <element signature="e#4938#5721#0" expanded="false" />
+            <element signature="e#5775#6247#0" expanded="false" />
+            <element signature="e#6313#6792#0" expanded="false" />
+            <element signature="e#6864#7348#0" expanded="false" />
+            <element signature="e#7404#8196#0" expanded="false" />
+            <element signature="e#8257#8725#0" expanded="false" />
+            <element signature="e#8777#9556#0" expanded="false" />
+            <element signature="e#9629#10099#0" expanded="false" />
+            <element signature="e#10179#10648#0" expanded="false" />
+            <element signature="e#10732#11199#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -889,6 +1041,9 @@
           <folding>
             <element signature="e#0#44#0" expanded="false" />
             <element signature="n#!!block;n#activateNino#0" expanded="false" />
+            <element signature="n#!!block;n#getNinosUser#0" expanded="false" />
+            <element signature="n#!!block;n#getNino#0" expanded="false" />
+            <element signature="n#!!block;n#setNinoUser#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -909,27 +1064,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.04263566">
+        <state vertical-scroll-proportion="0.025316456">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/ejercicios.js">
+    <entry file="file://$PROJECT_DIR$/controller/ninos.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.17906977">
+          <caret line="47" column="43" selection-start-line="47" selection-start-column="43" selection-end-line="47" selection-end-column="43" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
-            <element signature="n#!!block;n#toObject#0" expanded="false" />
-            <element signature="n#!!block;n#dateToString#0" expanded="false" />
+            <element signature="n#!!block;n#activateNino#0" expanded="false" />
+            <element signature="n#!!block;n#getNinosUser#0" expanded="false" />
+            <element signature="n#!!block;n#getNino#0" expanded="false" />
+            <element signature="n#!!block;n#setNinoUser#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/usuarios.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="74" column="66" selection-start-line="74" selection-start-column="66" selection-end-line="74" selection-end-column="66" />
+        <state vertical-scroll-proportion="0.20229885">
+          <caret line="67" column="9" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
             <element signature="n#!!block;n#login#0" expanded="false" />
@@ -942,50 +1100,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/ninos.js">
+    <entry file="file://$PROJECT_DIR$/controller/cursos.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="27" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.45517242">
+          <caret line="166" column="0" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
           <folding>
-            <element signature="e#0#44#0" expanded="false" />
-            <element signature="n#!!block;n#activateNino#0" expanded="false" />
+            <element signature="n#!!block;n#getCourse#0" expanded="false" />
+            <element signature="n#!!block;n#setCourse#0" expanded="false" />
+            <element signature="n#!!block;n#getCoursesNino#0" expanded="false" />
+            <element signature="n#!!block;n#setNinoCurso#0" expanded="false" />
+            <element signature="n#!!block;n#setClase#0" expanded="false" />
+            <element signature="n#!!block;n#getClases#0" expanded="false" />
+            <element signature="n#!!block;n#toObject#0" expanded="false" />
+            <element signature="n#!!block;n#dateToString#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/cursos.js">
+    <entry file="file://$PROJECT_DIR$/controller/ejercicios.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="51" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/notas.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
-          <folding />
+        <state vertical-scroll-proportion="0.1533101">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+            <element signature="n#!!block;n#setEjercicioCurso#0" expanded="false" />
+            <element signature="n#!!block;n#dateToString#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1010453">
-          <caret line="313" column="23" selection-start-line="313" selection-start-column="23" selection-end-line="313" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="393" column="25" selection-start-line="393" selection-start-column="0" selection-end-line="412" selection-end-column="0" />
           <folding>
-            <element signature="e#713#850#0" expanded="false" />
-            <element signature="e#904#1043#0" expanded="false" />
-            <element signature="e#1093#1508#0" expanded="false" />
-            <element signature="e#1559#2308#0" expanded="false" />
-            <element signature="e#2360#2933#0" expanded="false" />
-            <element signature="e#2980#3730#0" expanded="false" />
-            <element signature="e#3789#4268#0" expanded="false" />
-            <element signature="e#4320#5103#0" expanded="false" />
-            <element signature="e#5157#5629#0" expanded="false" />
-            <element signature="e#5695#6150#0" expanded="false" />
-            <element signature="e#6206#6998#0" expanded="false" />
-            <element signature="e#7090#7538#0" expanded="false" />
+            <element signature="e#798#935#0" expanded="false" />
+            <element signature="e#989#1128#0" expanded="false" />
+            <element signature="e#1178#1593#0" expanded="false" />
+            <element signature="e#1644#2393#0" expanded="false" />
+            <element signature="e#2445#3018#0" expanded="false" />
+            <element signature="e#3072#3550#0" expanded="false" />
+            <element signature="e#3597#4347#0" expanded="false" />
+            <element signature="e#4406#4886#0" expanded="false" />
+            <element signature="e#4938#5721#0" expanded="false" />
+            <element signature="e#5775#6247#0" expanded="false" />
+            <element signature="e#6313#6792#0" expanded="false" />
+            <element signature="e#6864#7348#0" expanded="false" />
+            <element signature="e#7404#8196#0" expanded="false" />
+            <element signature="e#8257#8725#0" expanded="false" />
+            <element signature="e#8777#9556#0" expanded="false" />
+            <element signature="e#9629#10099#0" expanded="false" />
+            <element signature="e#10179#10648#0" expanded="false" />
+            <element signature="e#10732#11199#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/notas.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3321719">
+          <caret line="52" column="39" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
+          <folding>
+            <element signature="n#!!block;n#getNotasCurso#0" expanded="false" />
+            <element signature="n#!!block;n#getNotasClase#0" expanded="false" />
+            <element signature="n#!!block;n#getNotasMes#0" expanded="false" />
+            <element signature="n#!!block;n#toObject#0" expanded="false" />
+            <element signature="n#!!block;n#dateToString#0" expanded="false" />
           </folding>
         </state>
       </provider>

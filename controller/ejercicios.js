@@ -4,7 +4,9 @@
 var bd = require('../bd.js');
 
 function getEjerciciosCurso(params, callback) {
-    var sql = "select id, titulo, descripcion, url, fecha from ejercicios where idCurso = " + params.idCurso;
+    var sql = "select e.id, e.titulo, e.descripcion, e.url, c.fecha from ejercicios e " +
+        "inner join clases c on c.id = e.idClase " +
+        "where e.idCurso = " + params.idCurso;
     bd.query(sql, function (err, rows, fields) {
         var json = {};
         var statuscode = 400;
@@ -22,7 +24,10 @@ function getEjerciciosCurso(params, callback) {
 }
 
 function getEjerciciosCursoFecha(params, callback) {
-    var sql = "select id, titulo, descripcion, url, fecha from ejercicios where idCurso = " + params.idCurso + " and fecha = '" + params.fecha + "';";
+    var sql = "select e.id, e.titulo, e.descripcion, e.url, c.fecha from ejercicios e " +
+        "inner join clases c on c.id = e.idClase " +
+        "where e.idCurso = " + params.idCurso + " and " +
+        " c.fecha = '" + params.fecha + "'";
     bd.query(sql, function (err, rows, fields) {
         var json = {};
         var statusCode = 400;

@@ -21,6 +21,10 @@ var router = express.Router();
 
 var userTypes = ['admin', 'profesor', 'padre'];
 
+router.get('/', function (req, res) {
+    res.send('Academy Kids Api Running');
+});
+
 //USUARIO
 router.post('/user/login', function (req, res) {
     var body = req.body;
@@ -298,61 +302,12 @@ router.post('/curso/ejercicio', function (req, res) {
 
 });
 
-router.get('/curso/:idCurso/ejercicios/:idEjercicio/notas/:idNino', function (req, res) {
+router.get('/curso/:idCurso/clases', function (req, res) {
     var params = req.params;
-    var head = req.headers;
-    users.autenticate(head, function (isOk, data) {
-        if (isOk) notas.getNotasEjercicio(params, function (json, code) {
-            res.json(json);
-            res.statusCode = code;
-        });
-        else {
-            var json = {
-                res: 2,
-                result: data
-            };
-            res.json(json);
-            res.statusCode = 400;
-        }
-    })
-});
-
-router.post('/ejercicio/nota', function (req, res) {
-    var body = req.body;
-    var head = req.headers;
-    users.autenticate(head, function (isOk, data) {
-        if (isOk) {
-            if (data.tipo === userTypes[0] || data.tipo === userTypes[1])
-                notas.setNotasEjercicio(body, function (json, code) {
-                    res.json(json);
-                    res.statusCode = code;
-                });
-            else {
-                var jsonA = {
-                    res: 3,
-                    result: "Permission Denied"
-                };
-                res.json(jsonA);
-                res.statusCode = 400;
-            }
-        }
-        else {
-            var json = {
-                res: 2,
-                result: data
-            };
-            res.json(json);
-            res.statusCode = 400;
-        }
-    })
-});
-
-router.get('/notas/:fecha/curso/:idCurso/nino/:idNino', function (req, res) {
-    var params = req.params;
-    var head = req.headers;
+    var head  = req.headers;
     users.autenticate(head, function (isOk, data) {
         if (isOk)
-            notas.getNotasDia(params, function (json, code) {
+            courses.getClases(params, function (json, code) {
                 res.json(json);
                 res.statusCode = code;
             });
@@ -367,7 +322,76 @@ router.get('/notas/:fecha/curso/:idCurso/nino/:idNino', function (req, res) {
     });
 });
 
-router.get('/notas/mes/:idCurso/:idNino/:fecha', function (req, res) {
+router.post('/curso/clase', function (req, res) {
+    var body = req.body;
+    var head = req.headers;
+    users.autenticate(head, function (isOk, data) {
+        if (isOk)
+            if (data.tipo === userTypes[0] || data.tipo === userTypes[1])
+                courses.setClase(body, function (json, code) {
+                    res.json(json);
+                    res.statusCode = code;
+                });
+            else {
+                var jsonA = {
+                    res: 3,
+                    result: "Permission Denied"
+                };
+                res.json(jsonA);
+                res.statusCode = 400;
+            }
+        else {
+            var json = {
+                res: 2,
+                result: data
+            };
+            res.json(json);
+            res.statusCode = 400;
+        }
+    });
+});
+
+router.get('/notas/curso/:idCurso/nino/:idNino', function (req, res) {
+    var params = req.params;
+    var head  = req.headers;
+    users.autenticate(head, function (isOk, data) {
+        if (isOk)
+            notas.getNotasCurso(params, function (json, code) {
+                res.json(json);
+                res.statusCode = code;
+            });
+        else {
+            var json = {
+                res: 2,
+                result: data
+            };
+            res.json(json);
+            res.statusCode = 400;
+        }
+    });
+});
+
+router.get('/notas/:fecha/curso/:idCurso/nino/:idNino', function (req, res) {
+    var params = req.params;
+    var head = req.headers;
+    users.autenticate(head, function (isOk, data) {
+        if (isOk)
+            notas.getNotasClase(params, function (json, code) {
+                res.json(json);
+                res.statusCode = code;
+            });
+        else {
+            var json = {
+                res: 2,
+                result: data
+            };
+            res.json(json);
+            res.statusCode = 400;
+        }
+    });
+});
+
+router.get('/notas/:fecha/curso/:idCurso/nino/:idNino/mes', function (req, res) {
     var params = req.params;
     var head = req.headers;
     users.autenticate(head, function (isOk, data) {
