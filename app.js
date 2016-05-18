@@ -232,6 +232,55 @@ router.post('/nino/activate', function (req, res) {
 
 });
 
+router.get('/curso/:idCurso/clases', function (req, res) {
+    var params = req.params;
+    var head = req.headers;
+    users.autenticate(head, function (isOk, data) {
+        if (isOk)
+            courses.getClases(params, function (json, code) {
+                res.json(json);
+                res.statusCode = code;
+            });
+        else {
+            var json = {
+                res: 2,
+                result: data
+            };
+            res.json(json);
+            res.statusCode = 400;
+        }
+    });
+});
+
+router.post('/curso/clase', function (req, res) {
+    var body = req.body;
+    var head = req.headers;
+    users.autenticate(head, function (isOk, data) {
+        if (isOk)
+            if (data.tipo === userTypes[0] || data.tipo === userTypes[1])
+                courses.setClase(body, function (json, code) {
+                    res.json(json);
+                    res.statusCode = code;
+                });
+            else {
+                var jsonA = {
+                    res: 3,
+                    result: "Permission Denied"
+                };
+                res.json(jsonA);
+                res.statusCode = 400;
+            }
+        else {
+            var json = {
+                res: 2,
+                result: data
+            };
+            res.json(json);
+            res.statusCode = 400;
+        }
+    });
+});
+
 router.get('/curso/:idCurso/ejercicios/', function (req, res) {
     var params = req.params;
     var head = req.headers;
@@ -302,58 +351,9 @@ router.post('/curso/ejercicio', function (req, res) {
 
 });
 
-router.get('/curso/:idCurso/clases', function (req, res) {
-    var params = req.params;
-    var head  = req.headers;
-    users.autenticate(head, function (isOk, data) {
-        if (isOk)
-            courses.getClases(params, function (json, code) {
-                res.json(json);
-                res.statusCode = code;
-            });
-        else {
-            var json = {
-                res: 2,
-                result: data
-            };
-            res.json(json);
-            res.statusCode = 400;
-        }
-    });
-});
-
-router.post('/curso/clase', function (req, res) {
-    var body = req.body;
-    var head = req.headers;
-    users.autenticate(head, function (isOk, data) {
-        if (isOk)
-            if (data.tipo === userTypes[0] || data.tipo === userTypes[1])
-                courses.setClase(body, function (json, code) {
-                    res.json(json);
-                    res.statusCode = code;
-                });
-            else {
-                var jsonA = {
-                    res: 3,
-                    result: "Permission Denied"
-                };
-                res.json(jsonA);
-                res.statusCode = 400;
-            }
-        else {
-            var json = {
-                res: 2,
-                result: data
-            };
-            res.json(json);
-            res.statusCode = 400;
-        }
-    });
-});
-
 router.get('/notas/curso/:idCurso/nino/:idNino', function (req, res) {
     var params = req.params;
-    var head  = req.headers;
+    var head = req.headers;
     users.autenticate(head, function (isOk, data) {
         if (isOk)
             notas.getNotasCurso(params, function (json, code) {
@@ -409,6 +409,32 @@ router.get('/notas/:fecha/curso/:idCurso/nino/:idNino/mes', function (req, res) 
             res.statusCode = 400;
         }
     });
+});
+
+router.post('curso/notas', function (req, res) {
+    var body = req.body;
+    var head = req.headers;
+    users.autenticate(head, function (isOk, data) {
+        if (isOk)
+            if (data.tipo === userTypes[0] || data.tipo === userTypes[1])
+                console.log('hola');
+            else {
+                var jsonA = {
+                    res: 3,
+                    result: "Permission Denied"
+                };
+                res.json(jsonA);
+                res.statusCode = 400;
+            }
+        else {
+            var json = {
+                res: 2,
+                result: data
+            };
+            res.json(json);
+            res.statusCode = 400;
+        }
+    })
 });
 
 app.use(router);

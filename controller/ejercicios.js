@@ -45,28 +45,39 @@ function getEjerciciosCursoFecha(params, callback) {
 }
 
 function setEjercicioCurso(body, callback) {
-    var sql = "insert into ejercicios(titulo, descripcion, url, idCurso, fecha) values( " +
-        "'" + body.titulo + "' , " +
-        "'" + body.desc + "' , " +
-        "'" + body.url + "' , " +
-        body.idCurso + " , " +
-        "now())";
+    var sql = "select * from clase where idClase = " + body.idClase;
     bd.query(sql, function (err, rows, fields) {
         var json = {};
         var statusCode = 400;
         if (err) {
             json.res = 0;
             json.result = err;
+            callback(json, statusCode);
         }
         else {
-            json.res = 1;
-            json.result = {
-                affectedRows: rows.affectedRows,
-                insertId: rows.insertId,
-                message: rows.message
-            };
+            var clase = rows[0];
+            var sql = "insert into ejercicios(descripcion, url, titulo, idClase, idCurso, idProfesor) values(" +
+                "'" + body.desc + "', '" + body.url + "', '" + body.titulo + "', " +
+                clase.id + ", " + clase.idCurso + ", " + clase.idProfesor + ")";
+            bd.query(sql, function (err, rows, fields) {
+                var json = {};
+                var statusCode = 400;
+                if (err) {
+                    json.res = 0;
+                    json.result = err;
+                }
+                else {
+                    json.res = 1;
+                    json.result = {
+                        affectedRows: rows.affectedRows,
+                        insertId: rows.insertId,
+                        message: rows.message
+                    };
+                    statusCode = 200;
+                }
+                callback(json, statusCode);
+            })
         }
-        callback(json, statusCode);
     })
 }
 
