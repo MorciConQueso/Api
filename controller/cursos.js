@@ -44,11 +44,11 @@ function setCourse(body, callback) {
     })
 }
 
-function getCoursesNino(idNino, callback) {
+function getCoursesNino(params, callback) {
     var sql = "select c.* " +
         "from cursos c " + "inner join ninos_has_cursos nc on c.id = nc.idCurso " +
         "inner join ninos n on c.id = nc.idNino " +
-        "where n.id = " + idNino;
+        "where n.id = " + params.idNino;
     bd.query(sql, function (err, rows, fields) {
         var json = {};
         var statusCode = 400;
@@ -89,47 +89,33 @@ function setNinoCurso(body, callback) {
 }
 
 function setClase(body, callback) {
-    var sql = "select * from cursos where id = " + body.idCurso;
+    var sql = "insert into clases(fecha, idCurso) " +
+        "values (now(), " + body.idCurso + ")";
     bd.query(sql, function (err, rows, fields) {
         var json = {};
         var statusCode = 400;
         if (err) {
             json.res = 0;
             json.result = err;
-            callback(json, statusCode);
         }
         else {
-            var curso = rows[0];
-            var sql = "insert into clases(fecha, idCurso, idProfesor) " +
-                "values (now(), " + curso.id + ", " + curso.idProfesor + ")";
-            bd.query(sql, function (err, rows, fields) {
-                var json = {};
-                var statusCode = 400;
-                if (err) {
-                    json.res = 0;
-                    json.result = err;
-                }
-                else {
-                    statusCode = 200;
-                    json.res = 1;
-                    json.result = {
-                        affectedRows: rows.affectedRows,
-                        insertId: rows.insertId,
-                        message: rows.message
-                    };
-                }
-                callback(json, statusCode);
-            })
+            statusCode = 200;
+            json.res = 1;
+            json.result = {
+                affectedRows: rows.affectedRows,
+                insertId: rows.insertId,
+                message: rows.message
+            };
         }
-    })
+        callback(json, statusCode);
+    });
 }
 
 function getClases(params, callback) {
-    var sql = "select cl.id, cl.fecha, c.nombre as nomCurso, p.id as idProfesor, concat(p.nombre, ' ', p.apellidos) as profesor " +
+    var sql = "select cl.id, cl.fecha, c.nombre as nomCurso " +
         "from clases cl " +
         "inner join cursos c on cl.idCurso = c.id " +
-        "inner join profesores p on c.idProfesor = p.id " +
-        "where cl.idCurso = " + params.idCurso + " "+
+        "where c.id = " + params.idCurso + " " +
         "order by cl.fecha desc";
     bd.query(sql, function (err, rows, fields) {
         var json = {};
@@ -141,12 +127,28 @@ function getClases(params, callback) {
         else {
             statusCode = 200;
             json.res = 1;
-            json.curso = rows[0].nomCurso || null;
-            json.profesor = {
-                id: rows[0].idProfesor,
-                nombre: rows[0].profesor
-            };
+            //json.curso = rows[0].nomCurso || null;
             json.clases = toObject(rows)
+        }
+        callback(json, statusCode);
+    })
+}
+
+function getNinosCurso(params, callback) {
+    var sql = "select n.* form ninos n " +
+        "inner join nino_has_curso nc on n.id = nc.idNino " +
+        "where nc.idCurso = " + params.idCurso;
+    bd.query(sql, function (err, rows, fields) {
+        var json = {};
+        var statusCode = 400;
+        if (err) {
+            json.res = 0;
+            json.result = err;
+        }
+        else {
+            json.res = 1;
+            json.ninos = rows;
+            statusCode = 200;
         }
         callback(json, statusCode);
     })
@@ -175,10 +177,10 @@ function dateToString(date) {
 }
 
 module.exports.getCoursesNino = getCoursesNino;
+module.exports.getNinosCurso = getNinosCurso;
 module.exports.setNinoCurso = setNinoCurso;
 module.exports.setCourse = setCourse;
 module.exports.getCourse = getCourse;
 module.exports.setClase = setClase;
 module.exports.getClases = getClases;
-
 

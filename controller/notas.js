@@ -13,7 +13,6 @@ function getNotasCurso(params, callback) {
         "where c.idCurso = " + params.idCurso + " " +
         "and c.idNino = " + params.idNino + " " +
         "order by cl.fecha desc limit 3";
-    console.log(sql);
     bd.query(sql, function (err, rows, fields) {
         var json = {};
         var statusCode = 400;
@@ -76,41 +75,26 @@ function getNotasMes(params, callback) {
 }
 
 function setNotas(body, callback) {
-    var sql = "select n.id as idNino, n.idUsuario, c.idCurso, c.idProfesor, c.id as idClase" +
-        " from ninos n, clases c where n.id = " + body.idNino + " and c.id = " + body.idClase;
+    var sql = "insert into calificaciones (comportamiento, puntualidad, ejercicios, ayuda, idClase, idCurso, idNino, idUsuario) " +
+        "values(" + body.comportamiento + ", " + body.puntualidad + ", " + body.ejercicios + ", " + body.ayuda + ", " +
+        body.idClase + ", " + body.idCurso + ", " + body.idNino + ", " + body.idUsuario + ")";
     bd.query(sql, function (err, rows, fields) {
         var json = {};
         var statusCode = 400;
         if (err) {
             json.res = 0;
             json.result = err;
-            callback(json, statusCode);
         }
         else {
-            var values = rows[0];
-            var sql = "insert into calificaciones(comportamiento, puntualidad, ejercicios, ayuda," +
-                "idClase, idCurso, idProfesor, idNino, idUsuario) values(" +
-                body.comportamiento + ", " + body.puntualidad + ", " + ", " + body.ejercicios + ", " + body.ayuda + ", " +
-                values.idClase + ", " + values.idCurso + ", " + values.idProfesor + ", " + values.idNino + ", " + values.idUsuario + ")";
-            bd.query(sql, function (err, rows, fields) {
-                var json = {};
-                var statusCode = 400;
-                if (err) {
-                    json.res = 0;
-                    json.result = err;
-                }
-                else {
-                    statusCode = 200;
-                    json.res = 1;
-                    json.result = {
-                        affectedRows: rows.affectedRows,
-                        insertId: rows.insertId,
-                        message: rows.message
-                    };
-                }
-                callback(json, statusCode);
-            })
+            statusCode = 200;
+            json.res = 1;
+            json.result = {
+                affectedRows: rows.affectedRows,
+                insertId: rows.insertId,
+                message: rows.message
+            }
         }
+        callback(json, statusCode)
     });
 }
 

@@ -60,7 +60,7 @@ function getNino(params, idUser, callback) {
                 json.result = err;
             }
             else {
-                if(rows.length === 0) {
+                if (rows.length === 0) {
                     json.res = 3;
                     json.result = "Niño not found";
                 }
@@ -102,7 +102,42 @@ function setNinoUser(body, callback) {
     })
 }
 
+function updateNino(body, idUser, callback) {
+    var sql = "update ninos set nombre = '" + body.nombre + "', " +
+        "apellidos = '" + body.apellidos + "', " +
+        "privacidad = " + body.privacidad + " " +
+        "where id = " + body.id;
+    if (idUser === body.idUsuario) {
+        bd.query(sql, function (err, rows, fields) {
+            var json = {};
+            var statusCode = 400;
+            if (err) {
+                json.res = 0;
+                json.result = err;
+            }
+            else {
+                statusCode = 200;
+                json.res = 1;
+                json.result = {
+                    status: rows.serverStatus,
+                    affectedRows: rows.affectedRows,
+                    message: rows.message
+                };
+            }
+            callback(json, statusCode);
+        });
+    }
+    else {
+        var json = {
+            res: 3,
+            result: "This kid is not your son"
+        };
+        callback(json, 400);
+    }
+}
+
 module.exports.activateNino = activateNino;
 module.exports.getNinosUser = getNinosUser;
 module.exports.setNinoUser = setNinoUser;
 module.exports.getNino = getNino;
+module.exports.updateNino = updateNino;
