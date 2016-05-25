@@ -64,6 +64,26 @@ router.put('/user/password', function (req, res) {
     })
 });
 
+router.put('/user/update', function (req, res) {
+    var body = req.body;
+    var head = req.headers;
+    users.autenticate(head, function (isOk, data) {
+        if (isOk) {
+            users.updateUser(body, data, function (json, code) {
+                res.json(json);
+                res.statusCode = code;
+            })
+        } else {
+            var json = {
+                res: 2,
+                result: data
+            };
+            res.json(json);
+            res.statusCode = 400;
+        }
+    })
+});
+
 router.get('/user/ninos', function (req, res) {
     var head = req.headers;
     users.autenticate(head, function (isOk, data) {

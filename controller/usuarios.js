@@ -120,6 +120,35 @@ function changePass(body, user, callback) {
     }
 }
 
+function updateUser(body, user, callback) {
+    if (body.idUsuario === user.id) {
+        var sql = "update usuarios set nombre = '" + body.user.nombre + "', apellidos = '" + body.user.apellidos + "' where id = " + body.idUsuario;
+        bd.query(sql, function (err, rows, fields) {
+            var json = {};
+            var statusCode = 400;
+            if (err) {
+                json.res = 0;
+                json.result = err;
+            }
+            else {
+                user.nombre = body.user.nombre;
+                user.apellidos = body.user.apellidos;
+                statusCode = 200;
+                json.res = 1;
+                json.result = user;
+            }
+            callback(json, statusCode);
+        });
+    }
+    else {
+        var json = {
+            res: 3,
+            result: "Cant change password"
+        };
+        callback(json, 400);
+    }
+}
+
 function generateApiKey(callback) {
     var hash = crypto.createHash('sha256');
     hash.on('readable', function () {
@@ -157,4 +186,5 @@ function checkPassword(body, user) {
 module.exports.login = login;
 module.exports.register = register;
 module.exports.changePass = changePass;
+module.exports.updateUser = updateUser;
 module.exports.autenticate = autenticate;
