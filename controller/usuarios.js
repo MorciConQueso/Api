@@ -77,7 +77,6 @@ function autenticate(head, callback) {
             }
             else
                 callback(false, "Invalid User");
-
         }
     });
 }
@@ -121,8 +120,8 @@ function changePass(body, user, callback) {
 }
 
 function updateUser(body, user, callback) {
-    if (body.idUsuario === user.id) {
-        var sql = "update usuarios set nombre = '" + body.user.nombre + "', apellidos = '" + body.user.apellidos + "' where id = " + body.idUsuario;
+    if (body.id === user.id) {
+        var sql = "update usuarios set nombre = '" + body.nombre + "', apellidos = '" + body.apellidos + "' where id = " + body.id;
         bd.query(sql, function (err, rows, fields) {
             var json = {};
             var statusCode = 400;
@@ -131,11 +130,11 @@ function updateUser(body, user, callback) {
                 json.result = err;
             }
             else {
-                user.nombre = body.user.nombre;
-                user.apellidos = body.user.apellidos;
+                user.nombre = body.nombre;
+                user.apellidos = body.apellidos;
                 statusCode = 200;
                 json.res = 1;
-                json.result = user;
+                json.user = user;
             }
             callback(json, statusCode);
         });

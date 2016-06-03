@@ -135,9 +135,10 @@ function getClases(params, callback) {
 }
 
 function getNinosCurso(params, callback) {
-    var sql = "select n.* form ninos n " +
-        "inner join nino_has_curso nc on n.id = nc.idNino " +
+    var sql = "select n.* from ninos n " +
+        "inner join ninos_has_cursos nc on n.id = nc.idNino " +
         "where nc.idCurso = " + params.idCurso;
+    console.log(sql);
     bd.query(sql, function (err, rows, fields) {
         var json = {};
         var statusCode = 400;

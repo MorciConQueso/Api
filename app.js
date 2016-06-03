@@ -12,11 +12,15 @@ var ejercicios = require('./controller/ejercicios.js');
 var bd = require('./bd.js');
 
 var app = express();
+var corsOptions = {
+    methods: ['GET', 'PUT', 'POST'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+};
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(methodOverride());
-app.use(cors());
+app.use(cors(corsOptions));
 
 var router = express.Router();
 
@@ -337,7 +341,7 @@ router.get('/profesor/cursos', function (req, res) {
     var head = req.headers;
     users.autenticate(head, function (isOk, data) {
         if (isOk) {
-            if (data.tipo === users[1]) {
+            if (data.tipo === userTypes[1]) {
                 profesores.getCursosProfesor(data.id, function (json, code) {
                     res.json(json);
                     res.statusCode = code;
@@ -429,7 +433,7 @@ router.get('/curso/:idCurso/ninos', function (req, res) {
     var head = req.headers;
     users.autenticate(head, function (isOk, data) {
         if (isOk) {
-            if (data.id === users[0] || data.id === users [1]) {
+            if (data.tipo === userTypes[0] || data.tipo === userTypes[1]) {
                 courses.getNinosCurso(params, function (json, code) {
                     res.json(json);
                     res.statusCode = code;
@@ -574,7 +578,7 @@ router.post('/curso/ejercicio', function (req, res) {
 
 });
 
-router.get('/notas/curso/:idCurso/nino/:idNino', function (req, res) {
+router.get('/notas/curso/:idCurso/nino/:idNino/lim/:lim', function (req, res) {
     var params = req.params;
     var head = req.headers;
     users.autenticate(head, function (isOk, data) {
@@ -614,12 +618,12 @@ router.get('/notas/:fecha/curso/:idCurso/nino/:idNino', function (req, res) {
     });
 });
 
-router.get('/notas/:fecha/curso/:idCurso/nino/:idNino/mes', function (req, res) {
+router.get('/notas/curso/:idCurso/nino/:idNino/', function (req, res) {
     var params = req.params;
     var head = req.headers;
     users.autenticate(head, function (isOk, data) {
         if (isOk)
-            notas.getNotasMes(params, function (json, code) {
+            notas.getNotas(params, function (json, code) {
                 res.json(json);
                 res.statusCode = code;
             });

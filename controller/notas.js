@@ -3,16 +3,12 @@
  */
 var bd = require('../bd.js');
 
-var monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-    "Julio", "Agosto", "Semptiembre", "Octubre", "Noviembre", "Diciembre"
-];
-
 function getNotasCurso(params, callback) {
     var sql = "select c.id, c.comportamiento, c.puntualidad, c.ejercicios, c.ayuda, cl.fecha from calificaciones c " +
         "inner join clases cl on c.idClase = cl.id " +
         "where c.idCurso = " + params.idCurso + " " +
         "and c.idNino = " + params.idNino + " " +
-        "order by cl.fecha desc limit 3";
+        "order by cl.fecha desc limit "+params.lim;
     bd.query(sql, function (err, rows, fields) {
         var json = {};
         var statusCode = 400;
@@ -35,6 +31,7 @@ function getNotasClase(params, callback) {
         "where c.idCurso = " + params.idCurso + " " +
         "and cl.fecha = '" + params.fecha + "' " +
         "and c.idNino = " + params.idNino;
+    console.log(sql);
     bd.query(sql, function (err, rows, fields) {
         var json = {};
         var statusCode = 400;
@@ -51,11 +48,10 @@ function getNotasClase(params, callback) {
     })
 }
 
-function getNotasMes(params, callback) {
+function getNotas(params, callback) {
     var sql = "select c.id, c.comportamiento, c.puntualidad, c.ejercicios, c.ayuda, fecha from calificaciones c " +
         "inner join clases cl on c.idClase = cl.id " +
         "where c.idCurso = " + params.idCurso + " " +
-        "and month(cl.fecha) = '" + params.fecha + "' " +
         "and c.idNino = " + params.idNino;
     bd.query(sql, function (err, rows, fields) {
         var json = {};
@@ -67,7 +63,6 @@ function getNotasMes(params, callback) {
         else {
             statusCode = 200;
             json.res = 1;
-            json.mes = monthNames[parseInt(params.fecha)];
             json.notas = toObject(rows);
         }
         callback(json, statusCode);
@@ -125,6 +120,6 @@ function dateToString(date) {
 }
 
 module.exports.getNotasClase = getNotasClase;
-module.exports.getNotasMes = getNotasMes;
+module.exports.getNotas = getNotas;
 module.exports.getNotasCurso = getNotasCurso;
 module.exports.setNotas = setNotas;
